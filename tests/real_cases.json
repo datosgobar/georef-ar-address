@@ -1,0 +1,147 @@
+[
+    {
+	"address": "Calle 12 Nro. 745-749 e/ 13 y 14",
+	"type": "btwn",
+	"street_names": [
+	    "Calle 12",
+	    "13",
+	    "14"
+	],
+	"door_number": {
+	    "unit": "Nro.",
+	    "value": "745-749"
+	}
+    },
+    {
+	"address": "Dr. Udo Bress e/44 y 45 S/N",
+	"type": "btwn",
+	"street_names": ["Dr. Udo Bress", "44", "45"],
+	"door_number": {
+	    "unit": null,
+	    "value": "S/N"
+	}
+    },
+    {
+	"address": "CATAMARCA 1033 PISO 3° B",
+	"type": "simple",
+	"street_names": ["CATAMARCA"],
+	"door_number": {
+	    "unit": null,
+	    "value": "1033"
+	},
+	"floor": "PISO 3° B"
+    },
+    {
+	"address": "Calle 33 N° 434 1er. P",
+	"type": "simple",
+	"street_names": ["Calle 33"],
+	"door_number": {
+	    "unit": "N°",
+	    "value": "434"
+	},
+	"floor": "1er. P"
+    },
+    {
+	"address": "Av. Maipú N° 124 5to.Piso Dto. E",
+	"type": "simple",
+	"street_names": ["Av. Maipú"],
+	"door_number": {
+	    "unit": "N°",
+	    "value": "124"
+	},
+	"floor": "5to. Piso Dto. E"
+    },
+    {
+	"address": "av. arturo frondizi 2000 y av. 12 de septiembre",
+	"type": "isct",
+	"street_names": [
+	    "av. arturo frondizi",
+	    "av. 12 de septiembre"
+	],
+	"door_number": {
+	    "unit": null,
+	    "value": "2000"
+	}
+    },
+    {
+	"address": "10 DE SEPTIEMBRE DE 1861 N° 4000 P. B",
+	"type": "simple",
+	"street_names": ["10 DE SEPTIEMBRE DE 1861"],
+	"door_number": {
+	    "unit": "N°",
+	    "value": "4000"
+	},
+	"floor": "P. B"
+    },
+    {
+	"address": "9 de Julio Nº 565, Piso 4º, Dpto. A",
+	"type": "simple",
+	"street_names": ["9 de Julio"],
+	"door_number": {
+	    "unit": "Nº",
+	    "value": "565"
+	},
+	"floor": "Piso 4º Dpto. A"
+    },
+    {
+	"address": "CHILE 3000 PB. DPTO. A",
+	"type": "simple",
+	"street_names": ["CHILE"],
+	"door_number": {
+	    "unit": null,
+	    "value": "3000"
+	},
+	"floor": "PB. DPTO. A"
+    },
+    {
+	"address": "Colombia e/R. de Esc. y San Lorenzo S/N",
+	"type": "btwn",
+	"street_names": [
+	    "Colombia",
+	    "R. de Esc.",
+	    "San Lorenzo"
+	],
+	"door_number": {
+	    "unit": null,
+	    "value": "S/N"
+	}
+    },
+    {
+	"address": "29 Y 11 NRO. 302",
+	"type": "isct",
+	"street_names": ["29", "11"],
+	"door_number": {
+	    "unit": "NRO.",
+	    "value": "302"
+	}
+    },
+    {
+	"address": "Av. José León Suarez y esq. Canadá 4322",
+	"type": "isct",
+	"street_names": [
+	    "Av. José León Suarez",
+	    "Canadá"
+	],
+	"door_number": {
+	    "unit": null,
+	    "value": "4322"
+	}
+    },
+    {
+	"address": "AV. QUESADA Y 2 DE ABRIL DE 1982",
+	"type": "isct",
+	"street_names": [
+	    "AV. QUESADA",
+	    "2 DE ABRIL DE 1982"
+	]
+    },
+    {
+	"address": "Av. 104 (Ex - R. Balbin) 2000",
+	"type": "simple",
+	"street_names": ["Av. 104"],
+	"door_number": {
+	    "unit": null,
+	    "value": "2000"
+	}
+    }
+]

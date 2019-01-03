@@ -1,0 +1,2416 @@
+[
+    {
+        "address": "foo y bar y baz",
+        "type": "none",
+        "door_number": {
+            "value": null,
+            "unit": null
+        }
+    },
+    {
+        "address": "foo entre bar y baz y foo",
+        "type": "none",
+        "door_number": {
+            "value": null,
+            "unit": null
+        }
+    },
+    {
+        "address": "juan",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "juan"
+        ]
+    },
+    {
+        "address": "juan E Gómez",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "juan E Gómez"
+        ]
+    },
+    {
+        "address": "santa fe",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "entre ríos",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "entre ríos"
+        ]
+    },
+    {
+        "address": "adolfo calle",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "adolfo calle"
+        ]
+    },
+    {
+        "address": "9 de julio",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "9 de julio"
+        ]
+    },
+    {
+        "address": "av. 9 de julio",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. 9 de julio"
+        ]
+    },
+    {
+        "address": "av.9 de julio",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. 9 de julio"
+        ]
+    },
+    {
+        "address": "av. formosa",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. formosa"
+        ]
+    },
+    {
+        "address": "av.formosa",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. formosa"
+        ]
+    },
+    {
+        "address": "o'higgins",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "o'higgins"
+        ]
+    },
+    {
+        "address": "ruta nacional nro 3",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "ruta nacional nro 3"
+        ]
+    },
+    {
+        "address": "ruta provincial N°3",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "ruta provincial N° 3"
+        ]
+    },
+    {
+        "address": "ruta 3",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "ruta 3"
+        ]
+    },
+    {
+        "address": "ruta de la tradicion",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "ruta de la tradicion"
+        ]
+    },
+    {
+        "address": "rp 3",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "rp 3"
+        ]
+    },
+    {
+        "address": "calle 10",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle 10"
+        ]
+    },
+    {
+        "address": "calle N° 10",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle N° 10"
+        ]
+    },
+    {
+        "address": "calle nro. 10",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle nro. 10"
+        ]
+    },
+    {
+        "address": "s/n",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "s/n"
+        ]
+    },
+    {
+        "address": "calle s/n",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle s/n"
+        ]
+    },
+    {
+        "address": "calle sn",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle sn"
+        ]
+    },
+    {
+        "address": "bv. s/nombre",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "bv. s/nombre"
+        ]
+    },
+    {
+        "address": "av. s/nombre",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. s/nombre"
+        ]
+    },
+    {
+        "address": "foo al bar",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "foo al bar"
+        ]
+    },
+    {
+        "address": "septiembre de 1999",
+        "type": "simple",
+        "street_names": [
+            "septiembre de 1999"
+        ]
+    },
+    {
+        "address": "vicente lopez y planes 2000",
+        "type": "simple",
+        "door_number": {
+            "value": "2000",
+            "unit": null
+        },
+        "street_names": [
+            "vicente lopez y planes"
+        ]
+    },
+    {
+        "address": "ruta de la tradicion km 1",
+        "type": "simple",
+        "door_number": {
+            "value": "1",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta de la tradicion"
+        ]
+    },
+    {
+        "address": "25 de mayo 2000",
+        "type": "simple",
+        "door_number": {
+            "value": "2000",
+            "unit": null
+        },
+        "street_names": [
+            "25 de mayo"
+        ]
+    },
+    {
+        "address": "1° de mayo 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "1° de mayo"
+        ]
+    },
+    {
+        "address": "humberto 1° 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "humberto 1°"
+        ]
+    },
+    {
+        "address": "1ra junta 2000",
+        "type": "simple",
+        "door_number": {
+            "value": "2000",
+            "unit": null
+        },
+        "street_names": [
+            "1ra junta"
+        ]
+    },
+    {
+        "address": "1ra. junta 2000",
+        "type": "simple",
+        "door_number": {
+            "value": "2000",
+            "unit": null
+        },
+        "street_names": [
+            "1ra. junta"
+        ]
+    },
+    {
+        "address": "cordoba 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "cordoba"
+        ]
+    },
+    {
+        "address": "adolfo calle 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "adolfo calle"
+        ]
+    },
+    {
+        "address": "leandro n alem 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "leandro n alem"
+        ]
+    },
+    {
+        "address": "leandro n alem n 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "n"
+        },
+        "street_names": [
+            "leandro n alem"
+        ]
+    },
+    {
+        "address": "calle 99 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle juan 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle juan"
+        ]
+    },
+    {
+        "address": "calle 99 1000 piso 1",
+        "floor": "piso 1",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 1° A",
+        "floor": "1° A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 1er piso A",
+        "floor": "1er piso A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 2ndo A",
+        "floor": "2ndo A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 piso 1° A",
+        "floor": "piso 1° A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 1°A",
+        "floor": "1° A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 2 A",
+        "floor": "2 A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 2 E",
+        "floor": "2 E",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 1° piso depto A",
+        "floor": "1° piso depto A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 1° piso A",
+        "floor": "1° piso A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 PB",
+        "floor": "PB",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 P.b. C",
+        "floor": "P.b. C",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 n 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "n"
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "99 n 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "n"
+        },
+        "street_names": [
+            "99"
+        ]
+    },
+    {
+        "address": "99 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "99"
+        ]
+    },
+    {
+        "address": "s/n 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "s/n"
+        ]
+    },
+    {
+        "address": "calle s/n s/n",
+        "type": "simple",
+        "door_number": {
+            "value": "s/n",
+            "unit": null
+        },
+        "street_names": [
+            "calle s/n"
+        ]
+    },
+    {
+        "address": "calle 10 s/n",
+        "type": "simple",
+        "door_number": {
+            "value": "s/n",
+            "unit": null
+        },
+        "street_names": [
+            "calle 10"
+        ]
+    },
+    {
+        "address": "av. 10 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": null
+        },
+        "street_names": [
+            "av. 10"
+        ]
+    },
+    {
+        "address": "avenida belgrano 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "avenida belgrano"
+        ]
+    },
+    {
+        "address": "belgrano avenida 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "belgrano avenida"
+        ]
+    },
+    {
+        "address": "calle s/n 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle s/n"
+        ]
+    },
+    {
+        "address": "tucuman s/numero",
+        "type": "simple",
+        "door_number": {
+            "value": "s/numero",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman"
+        ]
+    },
+    {
+        "address": "tucuman sin numero",
+        "type": "simple",
+        "door_number": {
+            "value": "sin numero",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman"
+        ]
+    },
+    {
+        "address": "tucuman sin número",
+        "type": "simple",
+        "door_number": {
+            "value": "sin número",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman"
+        ]
+    },
+    {
+        "address": "av espora 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "av espora"
+        ]
+    },
+    {
+        "address": "av: espora 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "av: espora"
+        ]
+    },
+    {
+        "address": "av. yak 100",
+        "type": "simple",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "av. yak"
+        ]
+    },
+    {
+        "address": "santa fe 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 B° foobar",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe al 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 (N)",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe (E) 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe \"1000\"",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000,",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 -",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe (ex rosario) 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe(ex rosario) 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe (ex rosario), 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s/n",
+        "type": "simple",
+        "door_number": {
+            "value": "s/n",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe sn",
+        "type": "simple",
+        "door_number": {
+            "value": "sn",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s-n",
+        "type": "simple",
+        "door_number": {
+            "value": "s-n",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s/nro",
+        "type": "simple",
+        "door_number": {
+            "value": "s/nro",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s/numero",
+        "type": "simple",
+        "door_number": {
+            "value": "s/numero",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s/n°",
+        "type": "simple",
+        "door_number": {
+            "value": "s/n°",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s/nº",
+        "type": "simple",
+        "door_number": {
+            "value": "s/nº",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe sin nº",
+        "type": "simple",
+        "door_number": {
+            "value": "sin nº",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe sin nro.",
+        "type": "simple",
+        "door_number": {
+            "value": "sin nro.",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe s/nro.",
+        "type": "simple",
+        "door_number": {
+            "value": "s/nro.",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe nro 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "nro"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe nro. 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "nro."
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N° 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N°"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N ° 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N °"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N°1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N°"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe Nº 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "Nº"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe #1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "#"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N* 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N*"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe N º 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N º"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe Nº1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "Nº"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000.1",
+        "type": "simple",
+        "door_number": {
+            "value": "1000.1",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000,1",
+        "type": "simple",
+        "door_number": {
+            "value": "1000,1",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000/1001",
+        "type": "simple",
+        "door_number": {
+            "value": "1000/1001",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1/2/3",
+        "type": "simple",
+        "door_number": {
+            "value": "1/2/3",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1/2/3/4/5",
+        "type": "simple",
+        "door_number": {
+            "value": "1/2/3/4/5",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 100-101",
+        "type": "simple",
+        "door_number": {
+            "value": "100-101",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 piso 1",
+        "floor": "piso 1",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000, piso 1",
+        "floor": "piso 1",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 piso 1º",
+        "floor": "piso 1º",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 piso 1°",
+        "floor": "piso 1°",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 211 PB",
+        "floor": "PB",
+        "type": "simple",
+        "door_number": {
+            "value": "211",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 211 PB A",
+        "floor": "PB A",
+        "type": "simple",
+        "door_number": {
+            "value": "211",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "ruta 8 km 123",
+        "type": "simple",
+        "door_number": {
+            "value": "123",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta 8"
+        ]
+    },
+    {
+        "address": "ruta nac.8 km 123",
+        "type": "simple",
+        "door_number": {
+            "value": "123",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nac. 8"
+        ]
+    },
+    {
+        "address": "ruta 8, km 123",
+        "type": "simple",
+        "door_number": {
+            "value": "123",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta 8"
+        ]
+    },
+    {
+        "address": "ruta 8 km 123.3",
+        "type": "simple",
+        "door_number": {
+            "value": "123.3",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta 8"
+        ]
+    },
+    {
+        "address": "ruta 8 km 123,3",
+        "type": "simple",
+        "door_number": {
+            "value": "123,3",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta 8"
+        ]
+    },
+    {
+        "address": "ruta 8 km 123 1/2",
+        "type": "simple",
+        "door_number": {
+            "value": "123 1/2",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta 8"
+        ]
+    },
+    {
+        "address": "ruta Nº 8 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta Nº 8"
+        ]
+    },
+    {
+        "address": "ruta N º 8 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta N º 8"
+        ]
+    },
+    {
+        "address": "ruta N° 8 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta N° 8"
+        ]
+    },
+    {
+        "address": "ruta N°8 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta N° 8"
+        ]
+    },
+    {
+        "address": "rn N° 10 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "rn N° 10"
+        ]
+    },
+    {
+        "address": "rn N 10 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "rn N 10"
+        ]
+    },
+    {
+        "address": "rn 10 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "rn 10"
+        ]
+    },
+    {
+        "address": "ex ruta 11 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ex ruta 11"
+        ]
+    },
+    {
+        "address": "acceso ruta 11 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "acceso ruta 11"
+        ]
+    },
+    {
+        "address": "colectora oeste ruta 11 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "colectora oeste ruta 11"
+        ]
+    },
+    {
+        "address": "ruta nacional N° 9 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional N° 9"
+        ]
+    },
+    {
+        "address": "ruta nacional N ° 9 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional N ° 9"
+        ]
+    },
+    {
+        "address": "ruta nacional N° 9 - km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional N° 9"
+        ]
+    },
+    {
+        "address": "ruta nacional N 9 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional N 9"
+        ]
+    },
+    {
+        "address": "ruta nacional nro 9 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional nro 9"
+        ]
+    },
+    {
+        "address": "rta provincial n 9 km 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "km"
+        },
+        "street_names": [
+            "rta provincial n 9"
+        ]
+    },
+    {
+        "address": "rta provincial n 9 kilometro 10",
+        "type": "simple",
+        "door_number": {
+            "value": "10",
+            "unit": "kilometro"
+        },
+        "street_names": [
+            "rta provincial n 9"
+        ]
+    },
+    {
+        "address": "cordoba y jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba y 25 de mayo",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "25 de mayo"
+        ]
+    },
+    {
+        "address": "cordoba y entre ríos",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "entre ríos"
+        ]
+    },
+    {
+        "address": "cordoba y calle 10",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "calle 10"
+        ]
+    },
+    {
+        "address": "cordoba e independencia",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "independencia"
+        ]
+    },
+    {
+        "address": "cordoba esq jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba esquina jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba esq/ jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba esq/jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba esq. jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba (esq jujuy)",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba (esq. jujuy)",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba (esq.jujuy)",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba (esquina jujuy)",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba, esq jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba, esquina jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba, esq. jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "cordoba, esq.jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "calle 48 bis esq.100",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle 48 bis",
+            "100"
+        ]
+    },
+    {
+        "address": "cordoba (Ex tucuman), esq. jujuy",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "jujuy"
+        ]
+    },
+    {
+        "address": "1 esq. 2",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "address": "1 y 2",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "address": "1era junta y 2ndo de mayo",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "1era junta",
+            "2ndo de mayo"
+        ]
+    },
+    {
+        "address": "calle s/n y cordoba",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle s/n",
+            "cordoba"
+        ]
+    },
+    {
+        "address": "av. entre rios y cordoba",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. entre rios",
+            "cordoba"
+        ]
+    },
+    {
+        "address": "santa fe 1000 y cordoba",
+        "type": "isct",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe",
+            "cordoba"
+        ]
+    },
+    {
+        "address": "santa fe 1000 y avenida s/n",
+        "type": "isct",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe",
+            "avenida s/n"
+        ]
+    },
+    {
+        "address": "1 y 2 S/N",
+        "type": "isct",
+        "door_number": {
+            "value": "S/N",
+            "unit": null
+        },
+        "street_names": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "address": "cordoba y 12 de octubre 1000",
+        "type": "isct",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "12 de octubre"
+        ]
+    },
+    {
+        "address": "ruta 5 y ruta 2 km 8",
+        "type": "isct",
+        "door_number": {
+            "value": "8",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta 5",
+            "ruta 2"
+        ]
+    },
+    {
+        "address": "santa fe s/n y cordoba",
+        "type": "isct",
+        "door_number": {
+            "value": "s/n",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe",
+            "cordoba"
+        ]
+    },
+    {
+        "address": "calle s/n 3000 y cordoba",
+        "type": "isct",
+        "door_number": {
+            "value": "3000",
+            "unit": null
+        },
+        "street_names": [
+            "calle s/n",
+            "cordoba"
+        ]
+    },
+    {
+        "address": "calle s/n s/n y cordoba",
+        "type": "isct",
+        "door_number": {
+            "value": "s/n",
+            "unit": null
+        },
+        "street_names": [
+            "calle s/n",
+            "cordoba"
+        ]
+    },
+    {
+        "address": "1 3000 y 2",
+        "type": "isct",
+        "door_number": {
+            "value": "3000",
+            "unit": null
+        },
+        "street_names": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "address": "ruta nacional n° 3 km 3 y tucuman",
+        "type": "isct",
+        "door_number": {
+            "value": "3",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional n° 3",
+            "tucuman"
+        ]
+    },
+    {
+        "address": "ruta nacional n° 3 (ex ruta 4) km 3 y tucuman",
+        "type": "isct",
+        "door_number": {
+            "value": "3",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nacional n° 3",
+            "tucuman"
+        ]
+    },
+    {
+        "address": "entre rios s/n 2 E e independencia",
+        "floor": "2 E",
+        "type": "isct",
+        "door_number": {
+            "value": "s/n",
+            "unit": null
+        },
+        "street_names": [
+            "entre rios",
+            "independencia"
+        ]
+    },
+    {
+        "address": "salta entre sarmiento y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "salta",
+            "sarmiento",
+            "mitre"
+        ]
+    },
+    {
+        "address": "salta entre entre ríos y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "salta",
+            "entre ríos",
+            "mitre"
+        ]
+    },
+    {
+        "address": "salta entre sarmiento (EX santa fe) y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "salta",
+            "sarmiento",
+            "mitre"
+        ]
+    },
+    {
+        "address": "salta e/ sarmiento y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "salta",
+            "sarmiento",
+            "mitre"
+        ]
+    },
+    {
+        "address": "av. entre rios entre salta y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. entre rios",
+            "salta",
+            "mitre"
+        ]
+    },
+    {
+        "address": "salta e/calles sarmiento y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "salta",
+            "sarmiento",
+            "mitre"
+        ]
+    },
+    {
+        "address": "salta, e/calles sarmiento y mitre",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "salta",
+            "sarmiento",
+            "mitre"
+        ]
+    },
+    {
+        "address": "10, e/calles 11 y 12",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "10",
+            "11",
+            "12"
+        ]
+    },
+    {
+        "address": "calle 10, e/calles 11 y 12",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle 10",
+            "11",
+            "12"
+        ]
+    },
+    {
+        "address": "10, e/ 11 y 12",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "10",
+            "11",
+            "12"
+        ]
+    },
+    {
+        "address": "10, e/ 11 y 9 de julio",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "10",
+            "11",
+            "9 de julio"
+        ]
+    },
+    {
+        "address": "9 de julio, entre 11 y 12",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "9 de julio",
+            "11",
+            "12"
+        ]
+    },
+    {
+        "address": "9 de julio, entre 11 e independencia",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "9 de julio",
+            "11",
+            "independencia"
+        ]
+    },
+    {
+        "address": "9 de julio e/ 25 de mayo y tucuman",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "9 de julio",
+            "25 de mayo",
+            "tucuman"
+        ]
+    },
+    {
+        "address": "av.1 entre 2 y 3",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "av. 1",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "address": "1 entre 2 y 3",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "1",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "address": "ruta N°3 entre ruta N° 4 y ruta nacional nro 33",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "ruta N° 3",
+            "ruta N° 4",
+            "ruta nacional nro 33"
+        ]
+    },
+    {
+        "address": "ruta N°3 entre cordoba y tucuman",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "ruta N° 3",
+            "cordoba",
+            "tucuman"
+        ]
+    },
+    {
+        "address": "mitre e/cordoba y tucuman",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "mitre",
+            "cordoba",
+            "tucuman"
+        ]
+    },
+    {
+        "address": "29 e/1 y 9 de julio",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "29",
+            "1",
+            "9 de julio"
+        ]
+    },
+    {
+        "address": "29 e/1 (ex 2) y 9",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "29",
+            "1",
+            "9"
+        ]
+    },
+    {
+        "address": "29 e/ruta n°2 (ex ruta n°3) y 9",
+        "type": "btwn",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "29",
+            "ruta n° 2",
+            "9"
+        ]
+    },
+    {
+        "address": "tucuman 100 entre cordoba y salta",
+        "type": "btwn",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman",
+            "cordoba",
+            "salta"
+        ]
+    },
+    {
+        "address": "tucuman s/numero entre cordoba y salta",
+        "type": "btwn",
+        "door_number": {
+            "value": "s/numero",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman",
+            "cordoba",
+            "salta"
+        ]
+    },
+    {
+        "address": "tucuman 100 entre 10 y 11",
+        "type": "btwn",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman",
+            "10",
+            "11"
+        ]
+    },
+    {
+        "address": "tucuman 100, entre 10 y 11",
+        "type": "btwn",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman",
+            "10",
+            "11"
+        ]
+    },
+    {
+        "address": "tucuman 100 entre 10 y 11 bis",
+        "type": "btwn",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman",
+            "10",
+            "11 bis"
+        ]
+    },
+    {
+        "address": "av. 7 n° 1000 entre calles 10 y 11",
+        "type": "btwn",
+        "door_number": {
+            "value": "1000",
+            "unit": "n°"
+        },
+        "street_names": [
+            "av. 7",
+            "10",
+            "11"
+        ]
+    },
+    {
+        "address": "44 1000 entre 10 y 11",
+        "type": "btwn",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "44",
+            "10",
+            "11"
+        ]
+    },
+    {
+        "address": "tucuman 100 e/ruta n°2 (ex ruta n°3) y 9",
+        "type": "btwn",
+        "door_number": {
+            "value": "100",
+            "unit": null
+        },
+        "street_names": [
+            "tucuman",
+            "ruta n° 2",
+            "9"
+        ]
+    },
+    {
+        "address": "ruta nac. nro. 11 km 100 e/calles 10 y 11",
+        "type": "btwn",
+        "door_number": {
+            "value": "100",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nac. nro. 11",
+            "10",
+            "11"
+        ]
+    },
+    {
+        "address": "ruta nac. nro. 11 km 12 1/2 e/calles 10 y calle sn",
+        "type": "btwn",
+        "door_number": {
+            "value": "12 1/2",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nac. nro. 11",
+            "10",
+            "calle sn"
+        ]
+    },
+    {
+        "address": "ruta nac. nro. 11 (ex 12) - km 12 1/2 e/calles 10 y calle sn",
+        "type": "btwn",
+        "door_number": {
+            "value": "12 1/2",
+            "unit": "km"
+        },
+        "street_names": [
+            "ruta nac. nro. 11",
+            "10",
+            "calle sn"
+        ]
+    },
+    {
+        "address": "vicente lopez y planes N°2000 2ndo E e/calle nro. 42 y entre ríos (ex cordoba)",
+        "type": "btwn",
+        "door_number": {
+            "value": "2000",
+            "unit": "N°"
+        },
+	"floor": "2ndo E",
+        "street_names": [
+            "vicente lopez y planes",
+            "calle nro. 42",
+            "entre ríos"
+        ]
+    }
+]

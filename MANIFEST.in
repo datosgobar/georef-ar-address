@@ -1,0 +1,5 @@
+include georef_ar_address.py
+recursive-include grammars *.cfg
+include requirements.txt
+include LICENSE
+include README.md
