@@ -1,7 +1,8 @@
 import json
 import os
 from unittest import TestCase
-from georef_ar_address import AddressParser, ADDRESS_DATA_TEMPLATE
+from georef_ar_address import AddressParser
+from georef_ar_address.address_parser import ADDRESS_DATA_TEMPLATE
 
 
 def test_file_path(filename):

@@ -11,7 +11,7 @@ with open('README.md') as f:
 
 setup(
     name='georef-ar-address',
-    py_modules=['georef_ar_address'],
+    packages=['georef_ar_address'],
     version=VERSION,
     description='Librería escrita en Python para la identificación de componentes de direcciones argentinas',
     long_description=long_description,
@@ -19,6 +19,8 @@ setup(
     author='Datos Argentina',
     author_email='datos@modernizacion.gob.ar',
     install_requires=requires,
+    include_package_data=True,
+    package_data={'georef_ar_address': ['grammars/*.cfg']},
     python_requires='>=3',
     url='https://github.com/datosgobar/georef-ar-address',
     download_url='https://github.com/datosgobar/georef-ar-address/archive/{}.tar.gz'.format(VERSION),

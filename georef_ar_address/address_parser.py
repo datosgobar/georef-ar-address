@@ -18,9 +18,8 @@ import os
 import copy
 import nltk
 
-GRAMMARS_DIR = 'grammars'
-GRAMMAR_PATH = os.path.join(os.path.dirname(__file__), GRAMMARS_DIR,
-                            'address-ar.cfg')
+GRAMMARS_DIR = os.path.join(os.path.dirname(__file__), 'grammars')
+GRAMMAR_PATH = os.path.join(GRAMMARS_DIR, 'address-ar.cfg')
 START_PRODUCTION = 'address'
 
 ADDRESS_DATA_TEMPLATE = {
