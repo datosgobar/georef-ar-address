@@ -65,6 +65,10 @@ class AddressParserTest(TestCase):
         de retorno de AddressParser.parse() sea idéntico al que está escrito en
         el test case, utilizando el campo 'address' como entrada.
 
+        Los test cases fueron almacenados en archivos JSON para evitar tener
+        grandes cantidades de definiciones de variables dentro del código de
+        los tests.
+
         Args:
             address_type (str): Tipo de dirección ('none', 'simple', 'isct',
                 'btwn').
@@ -133,6 +137,22 @@ class RealAddressParserTest(AddressParserTest):
         """Comprobar que los casos de tipo 'btwn' son parseados
         correctamente."""
         self.assert_cases_for_type('btwn')
+
+
+class InvalidAddressesParserTest(TestCase):
+    def setUp(self):
+        self.parser = AddressParser()
+
+    def test_invalid_token(self):
+        """Las direcciones que generen tokens inválidos deberían tener tipo
+        'none'."""
+        data = self.parser.parse('Tuc#^^%mán 11100')
+        self.assertEqual(data['type'], 'none')
+
+    def test_empty_address(self):
+        """Un string vacío como dirección debería tener tipo 'none'."""
+        data = self.parser.parse('')
+        self.assertEqual(data['type'], 'none')
 
 
 if __name__ == '__main__':
