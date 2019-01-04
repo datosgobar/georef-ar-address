@@ -24,11 +24,11 @@ Como ejemplo, la dirección:
 
 Esta compuesta de las siguientes componentes:
 
-    calles:          'Santa Fe'
-    altura (unidad): 'N°'
-    altura (valor):  '1004'
-    piso:            '2ndo B'
-    tipo:            'simple' (simple)
+    calles:          "Santa Fe"
+    altura (unidad): "N°"
+    altura (valor):  "1004"
+    piso:            "2ndo B"
+    tipo:            "simple"
 
 Otro ejemplo:
 
@@ -36,11 +36,11 @@ Otro ejemplo:
 
 Esta compuesta de las siguientes componentes:
 
-    calles:          'Tucumán', '9 de Julio'
+    calles:          "Tucumán", "9 de Julio"
     altura (unidad): (no tiene)
     altura (valor):  (no tiene)
     piso:            (no tiene)
-    tipo:            'isct' (intersección)
+    tipo:            "isct" (intersección)
 
 Y un último ejemplo:
 
@@ -48,11 +48,11 @@ Y un último ejemplo:
 
 Esta compuesta de las siguientes componentes:
 
-    calles:          'Av. 15 de Mayo', 'Calle 11', 'Vicente Lopez y Planes'
+    calles:          "Av. 15 de Mayo", "Calle 11", "Vicente Lopez y Planes"
     altura (unidad): (no tiene)
     altura (valor):  3133
     piso:            (no tiene)
-    tipo:            'btwn' (calle entre calles)
+    tipo:            "btwn" (calle entre calles)
 
 ## Diseño
 
@@ -79,9 +79,9 @@ En el paso de normalización, se remueven partes del string de entrada que no so
 
 **INPUT:** string normalizado
 
-El en paso de tokenización, se transforma el string de entrada a una lista de tokens. Un token es una tupla de (valor, TIPO), donde 'valor' es un valor extraído del string de entrada, y 'TIPO' es un tipo que se le asigna a ese valor, dependiendo de su contenido. Por ejemplo, el valor 'hola' tiene el tipo 'WORD', mientras que '432' tiene el tipo 'NUM'. La lista de tokens se genera dividiendo el string de entrada en partes (separando por espacios) y asignando cada parte resultante a un tipo de token.
+El en paso de tokenización, se transforma el string de entrada a una lista de tokens. Un token es una tupla de `(valor, TIPO)`, donde "valor" es un valor extraído del string de entrada, y `TIPO` es un tipo que se le asigna a ese valor, dependiendo de su contenido. Por ejemplo, el valor "hola" tiene el tipo `WORD`, mientras que "432" tiene el tipo `NUM`. La lista de tokens se genera dividiendo el string de entrada en partes (separando por espacios) y asignando cada parte resultante a un tipo de token.
 
-Como ejemplo, el string de entrada 'Santa Fe 1000' resultaría en la siguiente lista de tokens: [('Santa', 'WORD'), ('Fe', 'WORD'), ('1000', 'NUM')].
+Como ejemplo, el string de entrada "Santa Fe 1000" resultaría en la siguiente lista de tokens: `[("Santa", "WORD"), ("Fe", "WORD"), ("1000", "NUM")]`.
 
 **OUTPUT:** lista de tokens
 
@@ -89,9 +89,9 @@ Como ejemplo, el string de entrada 'Santa Fe 1000' resultaría en la siguiente l
 
 **INPUT:** lista de tokens
 
-En el paso de parseo, se toma la lista de tipos tokens y se intenta construir un árbol de parseo utilizando la gramática libre de contexto definida en el archivo 'address-ar.cfg'. El parseo se realiza utilizando la clase EarleyChartParser de la librería de procesamiento de lenguaje natural NLTK.
+En el paso de parseo, se toma la lista de tipos tokens y se intenta construir un árbol de parseo utilizando la gramática libre de contexto definida en el archivo "address-ar.cfg". El parseo se realiza utilizando la clase `EarleyChartParser` de la librería de procesamiento de lenguaje natural NLTK.
 
-Es importante notar que se utilizan solo los tipos de los tokens en el momento de parseo. En el ejemplo anterior, se utilizaría la lista ['WORD', 'WORD', 'NUM'] como entrada a la instancia de EarleyChartParser. Esto se debe a que la gramática definida solo contempla los tipos de los tokens, y no sus valores reales, que no son de importancia en el momento del parseo. El hecho de poder considerar las palabras 'Juan' y 'María' como 'WORD' (por jemplo) simplifica enormemente la definición de la gramática, y obtiene los mismos resultados.
+Es importante notar que se utilizan solo los tipos de los tokens en el momento de parseo. En el ejemplo anterior, se utilizaría la lista `["WORD", "WORD", "NUM"]` como entrada a la instancia de `EarleyChartParser`. Esto se debe a que la gramática definida solo contempla los tipos de los tokens, y no sus valores reales, que no son de importancia en el momento del parseo. El hecho de poder considerar las palabras "Juan" y "María" como `WORD` (por jemplo) simplifica enormemente la definición de la gramática, y obtiene los mismos resultados.
 
 El parseo puede resultar en una lista vacía, o en una lista con cualquier cantidad de parseos posibles para la lista de tipos de tokens dada.
 
@@ -103,13 +103,13 @@ El parseo puede resultar en una lista vacía, o en una lista con cualquier canti
 
 En el paso de desambiguación, se toman todos los árboles de parseo obtenidos, y se elige el mejor, basándose en distintos criterios.
 
-Se priorizan árboles que hayan encontrado calles 'sin nombre', es decir, calles del estilo 'Calle 33' o 'Avenida 11', ya que de esta forma se evita interpretar los números como alturas.
+Se priorizan árboles que hayan encontrado calles "sin nombre", es decir, calles del estilo "Calle 33" o "Avenida 11", ya que de esta forma se evita interpretar los números como alturas.
 
-Se priorizan también los árboles que posean alturas, para evitar interpretar 'Rosario 1003' como una calle llamada 'Rosario 1003', en lugar de una calle llamada 'Rosario' con altura '1003'.
+Se priorizan también los árboles que posean alturas, para evitar interpretar "Rosario 1003" como una calle llamada "Rosario 1003", en lugar de una calle llamada "Rosario" con altura "1003".
 
 Finalmente, dependiendo de si se encontró una altura o no, se le asigna al árbol una prioridad adicional, dependiente del tipo de dirección encontrado. Las direcciones de tipo `btwn` siempre tienen mayor prioridad ya que poseen una estructura más compleja y su presencia normalmente indica que la dirección efectivamente es de tipo `btwn`.
 
-Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `isct`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como 'Vicente Lopez y Planes 120' como tipo `simple` (y no como tipo `isct`, a pesar de contener una 'y'). Un problema generado por esto es que direcciones como 'Tucumán y Belgrano 1231' son interpretadas como `simple` y no `isct`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta 'Mitre y Misiones' como `isct`.
+Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `isct`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como "Vicente Lopez y Planes 120" como tipo `simple` (y no como tipo `isct`, a pesar de contener una "y"). Un problema generado por esto es que direcciones como "Tucumán y Belgrano 1231" son interpretadas como `simple` y no `isct`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta "Mitre y Misiones" como `isct`.
 
 **OUTPUT:** árbol de parseo, o `None`
 
@@ -120,3 +120,7 @@ Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de
 Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo utiliza para identificar las componentes de la dirección contenida en el string de entrada original. Para lograr esto, se recorre el árbol (*preorder*, izquierda a derecha) buscando nodos conteniendo nombres de calles, alturas, etc. y se calcula a qué parte del string original pertenecen. Las componentes resultantes se insertan en un diccionario (`dict`), y se devuelve la información al usuario.
 
 **OUTPUT:** diccionario con componentes de la dirección
+
+### Manejo de Errores
+
+Si el string de entrada contiene un valor que no puede ser interpretado como una dirección, se retorna `none` como tipo de dirección. Esto puede suceder si se encotraron dos o más interpretaciones posibles del contenido del string, y no se pudo decidir cuál fue la correcta (en el paso de desambiguación). Esto también puede suceder si el string contiene caracteres no aceptados por el tokenizador ("%", "&", etc.).
