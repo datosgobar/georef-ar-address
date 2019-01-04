@@ -1,3 +1,0 @@
-[run]
-command_line = -m tests.test_georef_ar_address
-source = georef_ar_address

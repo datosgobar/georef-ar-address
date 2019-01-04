@@ -9,5 +9,6 @@ install:
 script:
   - make code_checks
   - make test
+  - coverage run --source=georef_ar_address -m tests.test_georef_ar_address
 after_success:
 - coveralls
