@@ -19,3 +19,6 @@ package:
 
 upload: package
 	twine upload dist/*
+
+repl:
+	@python georef_ar_address/address_parser.py

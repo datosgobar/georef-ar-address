@@ -1,16 +1,12 @@
-"""Módulo georef_ar_address.py
+"""Módulo address_parser.py
 
-Contiene clases y funciones utilizadas para extraer información de direcciones
-de calles en Argentina. Los tipos de direcciones aceptadas son:
+Contiene clases y funciones utilizadas para extraer components de direcciones
+de calles en Argentina. La extracción opera exclusivamente con texto, y nunca
+consulta recursos externos (todo el procesamiento se hace localmente).
 
-<calle>
-<calle> <altura>
-<calle> y <calle>
-<calle> <altura> y <calle>
-<calle> y <calle> <altura>
-<calle> entre <calle> y <calle>
-<calle> <altura> entre <calle> y <calle>
-<calle> entre <calle> y <calle> <altura>
+Para ver información sobre el diseño de address_parser.py, ver el archivo
+docs/design.md.
+
 """
 
 import re
@@ -306,3 +302,24 @@ class AddressParser:
             data['floor'] = floor
 
         return data
+
+
+def repl():
+    import json
+    parser = AddressParser()
+
+    while True:
+        try:
+            address = input('> ')
+        except (KeyboardInterrupt, EOFError):
+            break
+
+        if not address:
+            break
+
+        data = parser.parse(address)
+        print(json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True))
+
+
+if __name__ == '__main__':
+    repl()
