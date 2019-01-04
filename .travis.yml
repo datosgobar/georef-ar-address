@@ -9,3 +9,5 @@ install:
 script:
   - make code_checks
   - make test
+after_success:
+- coveralls

@@ -1,5 +1,6 @@
 import json
 import os
+import unittest
 from unittest import TestCase
 from georef_ar_address import AddressParser
 from georef_ar_address.address_parser import ADDRESS_DATA_TEMPLATE
@@ -132,3 +133,7 @@ class RealAddressParserTest(AddressParserTest):
         """Comprobar que los casos de tipo 'btwn' son parseados
         correctamente."""
         self.assert_cases_for_type('btwn')
+
+
+if __name__ == '__main__':
+    unittest.main()
