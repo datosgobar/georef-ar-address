@@ -101,7 +101,7 @@ El parseo puede resultar en una lista vacía, o en una lista con cualquier canti
 
 **INPUT:** lista de árboles de parseo
 
-En el paso de desambiguación, se toman todos los árboles de parseo obtenidos, y se elige el mejor, basándose en distintos criterios.
+En el paso de desambiguación, se toman todos los árboles de parseo obtenidos, y se elige el mejor, basándose en tres distintos criterios:
 
 Se priorizan árboles que hayan encontrado calles "sin nombre", es decir, calles del estilo "Calle 33" o "Avenida 11", ya que de esta forma se evita interpretar los números como alturas.
 
@@ -110,6 +110,8 @@ Se priorizan también los árboles que posean alturas, para evitar interpretar "
 Finalmente, dependiendo de si se encontró una altura o no, se le asigna al árbol una prioridad adicional, dependiente del tipo de dirección encontrado. Las direcciones de tipo `btwn` siempre tienen mayor prioridad ya que poseen una estructura más compleja y su presencia normalmente indica que la dirección efectivamente es de tipo `btwn`.
 
 Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `isct`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como "Vicente Lopez y Planes 120" como tipo `simple` (y no como tipo `isct`, a pesar de contener una "y"). Un problema generado por esto es que direcciones como "Tucumán y Belgrano 1231" son interpretadas como `simple` y no `isct`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta "Mitre y Misiones" como `isct`.
+
+El orden de los criterios mencionados es importante. Los primeros criterios tienen más importancia que los últimos. Este orden fue determinado experimentalmente, probando con varios ejemplos de direcciones reales hasta hallar la mejor opción.
 
 **OUTPUT:** árbol de parseo, o `None`
 
@@ -124,3 +126,6 @@ Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo ut
 ### Manejo de Errores
 
 Si el string de entrada contiene un valor que no puede ser interpretado como una dirección, se retorna `none` como tipo de dirección. Esto puede suceder si se encotraron dos o más interpretaciones posibles del contenido del string, y no se pudo decidir cuál fue la correcta (en el paso de desambiguación). Esto también puede suceder si el string contiene caracteres no aceptados por el tokenizador ("%", "&", etc.).
+
+## Performance
+TODO
