@@ -478,6 +478,13 @@ class AddressParser:
         innecesarias (si no es 'None'). Ver el archivo docs/design.md para más
         detalles de esta mejora de rendimiento.
 
+        Args:
+            token_types (list): Lista de tipos de tokens.
+
+        Returns:
+            TreeVisitor, NoneType: El mejor TreeVisitor encontrado, o None si
+                no existe.
+
         """
         if self._cache is not None:
             tokens_hash = hash(tuple(token_types))
@@ -492,6 +499,18 @@ class AddressParser:
         return self._tokens_parse_tree(token_types)
 
     def parse(self, address):
+        """Punto de entrada de la clase AddressParser. Toma una dirección como
+        string e intenta extraer sus componentes, utilizando el proceso
+        detallado en el archivo docs/design.md.
+
+        Args:
+            address (str): Dirección sobre la cual realizar la extracción de
+                componentes.
+
+        Returns:
+            dict: Componentes de la dirección 'address'.
+
+        """
         # Remover espacios al comienzo y al final
         address = address.strip()
         processed = self._normalize_address(address)
