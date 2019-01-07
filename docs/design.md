@@ -2,7 +2,7 @@
 
 ## Teoría
 
-El objetivo de la librería `georef-ar-address` es extraer de un string conteniendo una dirección las componentes individuales que la componen. Es importarte resaltar que la entrada (input) utilizada es un string común, sin ningún tipo de metadatos que puedan proveer información sobre su contenido. Para simplificar el proceso de extracción, se definieron tres tipos de direcciones posibles a aceptar como entrada:
+El objetivo de la librería `georef-ar-address` es extraer de un string conteniendo una dirección las componentes individuales que la componen, realizando todo el procesamiento localmente. Es importarte resaltar que la entrada (input) utilizada es un string común, sin ningún tipo de metadatos que puedan proveer información sobre su contenido. Para simplificar el proceso de extracción, se definieron tres tipos de direcciones posibles a aceptar como entrada:
 
 - simple: nombre de calle y altura opcional (con piso opcional)
 - isct: intersección de calles, con altura opcional (con piso opcional)
@@ -128,4 +128,13 @@ Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo ut
 Si el string de entrada contiene un valor que no puede ser interpretado como una dirección, se retorna `none` como tipo de dirección. Esto puede suceder si se encotraron dos o más interpretaciones posibles del contenido del string, y no se pudo decidir cuál fue la correcta (en el paso de desambiguación). Esto también puede suceder si el string contiene caracteres no aceptados por el tokenizador ("%", "&", etc.).
 
 ## Performance
-TODO
+La clase `AddressParser` incluye la opción de especificar un objeto `cache` a utilizar como cache durante el proceso de extracción. El objeto debe ser una instancia de `dict`, o bien un objeto que se comporte como un `dict`. Para realizar el cacheo, se toma la cadena de tipos de tokens recibidos en la etapa 3 (parseo), se los *hashea* y luego se los asigna a la salida de la etapa 4 (desambiguación). De esta forma, cuando se reciben dos direcciones que generan la misma lista de tipos de tokens, se reutiliza el mejor árbol de parseo y se evita tener que realizar un parseo nuevo. Como ejemplo, las siguientes dos direcciones:
+
+- Córdoba 1321, 2° B
+- Tucumán 312, 1 A
+
+Generan la misma lista de tipos de tokens:
+
+`[WORD, NUM, NUM, LETTER]`
+
+De esta forma, durante la extracción de componentes de la segunda dirección se utilizaría el árbol generado durante la extracción de la primera.

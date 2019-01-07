@@ -333,7 +333,7 @@ class AddressParser:
     'Córdoba 2000' ---> [WORD, INT]
 
     Notar que si no se especifica un cache, la clase AddressParser tiene un
-    estado interno completamente estático. Por el otro lado, el uso de cache
+    estado interno completamente inmutable. Por el otro lado, el uso de cache
     aumenta considerablemente la performance del proceso de extracción.
 
     Attributes:
@@ -503,6 +503,27 @@ class AddressParser:
         string e intenta extraer sus componentes, utilizando el proceso
         detallado en el archivo docs/design.md.
 
+        La estructura del valor de retorno del método está definido en la
+        variable ADDRESS_DATA_TEMPLATE. El valor es un diccionario que incluye
+        la dirección de entrada y sus componentes separados, en casos en los
+        que la extracción se pudo completar exitosamente. Por ejemplo:
+
+        Entrada: 'Tucumán 1300 1° A'
+
+        Salida:
+        {
+            "address": "Tucumán 1300 1° A",
+            "door_number": {
+                "unit": null,
+                "value": "1300"
+            },
+            "floor": "1° A",
+            "street_names": [
+                "Tucumán"
+            ],
+            "type": "simple"
+        }
+
         Args:
             address (str): Dirección sobre la cual realizar la extracción de
                 componentes.
@@ -542,9 +563,10 @@ class AddressParser:
         return data
 
 
-def repl():
+def address_parser_repl():
+    """Función de prueba para probar ejemplos de direcciones en la consola."""
     import json
-    parser = AddressParser()
+    parser = AddressParser(cache={})
 
     while True:
         try:
@@ -558,6 +580,8 @@ def repl():
         data = parser.parse(address)
         print(json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True))
 
+    print()
+
 
 if __name__ == '__main__':
-    repl()
+    address_parser_repl()
