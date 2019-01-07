@@ -6,7 +6,8 @@ test:
 	python -m unittest
 
 coverage:
-	coverage run --source=georef_ar_address -m tests.test_georef_ar_address
+	coverage run --source=georef_ar_address --omit=georef_ar_address/__main__.py \
+		-m tests.test_georef_ar_address
 
 code_checks:
 	flake8 georef_ar_address/*.py tests/*.py
