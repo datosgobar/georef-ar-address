@@ -41,9 +41,18 @@ La librería se encuentra publicada en [`PyPI`](https://pypi.org/project/georef-
 $ pip3 install georef-ar-address
 ```
 
-## Uso
+## Uso Rápido
 
-Para utilizar la librería luego de instalarla, se debe instanciar un objeto de tipo `AddressParser` y utilizar su método `parse`, pasando una dirección como argumento:
+Para probar ejemplos de extracción de componentes de forma interactiva, utilizar el siguiente comando:
+```bash
+$ python -m georef_ar_address
+```
+
+Una vez ejecutado el comando se puede escribir una dirección y presionar ENTER para obtener las componentes de la misma.
+
+## Documentación
+
+Para utilizar la librería desde Python, se debe instanciar un objeto de tipo `AddressParser` y utilizar su método `parse`, pasando una dirección como argumento:
 
 ```python
 >>> from georef_ar_address import AddressParser
