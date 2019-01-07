@@ -561,27 +561,3 @@ class AddressParser:
             data['floor'] = floor
 
         return data
-
-
-def address_parser_repl():
-    """Función de prueba para probar ejemplos de direcciones en la consola."""
-    import json
-    parser = AddressParser(cache={})
-
-    while True:
-        try:
-            address = input('> ')
-        except (KeyboardInterrupt, EOFError):
-            break
-
-        if not address:
-            break
-
-        data = parser.parse(address)
-        print(json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True))
-
-    print()
-
-
-if __name__ == '__main__':
-    address_parser_repl()
