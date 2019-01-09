@@ -1586,6 +1586,18 @@
         ]
     },
     {
+        "address": "cordoba e hipolito yrigoyen",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "hipolito yrigoyen"
+        ]
+    },
+    {
         "address": "cordoba esq jujuy",
         "type": "isct",
         "door_number": {
