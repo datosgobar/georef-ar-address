@@ -18,7 +18,6 @@ Como ejemplo, utilizar la librería sobre la dirección:
 Resultaría en la siguiente extracción de componentes:
 ```json
 {
-    "address": "Av. Libertador N1331 2ndo A e/25 de Mayo y Bartolomé Mitre",
     "door_number": {
         "unit": "N",
         "value": "1331"
@@ -59,7 +58,6 @@ Para utilizar la librería desde Python, se debe instanciar un objeto de tipo `A
 >>> parser = AddressParser()
 >>> parser.parse('Sarmiento N° 1100')
 {
-    "address": "Sarmiento N° 1100",
     "door_number": {
         "unit": "N°",
         "value": "1100"
@@ -74,7 +72,6 @@ Para utilizar la librería desde Python, se debe instanciar un objeto de tipo `A
 
 El valor de retorno de `parse` es una instancia de `dict` conteniendo cada componente de la dirección, en caso de una extracción exitosa. Los valores del diccionario son los siguientes:
 
-- `address`: Dirección de entrada sin modificar.
 - `door_number` `unit`: Unidad de la altura de la dirección (e.g. `N°`, `nro.`, `Km`).
 - `door_number` `value`: Valor de la altura de la dirección (e.g. `132`, `400/401`, `S/N`)
 - `floor`: Piso de la dirección (e.g. `2ndo B`, `PB`).

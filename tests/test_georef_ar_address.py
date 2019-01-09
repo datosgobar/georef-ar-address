@@ -88,6 +88,7 @@ class AddressParserTest(TestCase):
 
     def assert_address_data(self, address, data):
         parsed = self._parser.parse(address)
+        parsed['address'] = address
         self.assertDictEqual(parsed, data)
 
 
