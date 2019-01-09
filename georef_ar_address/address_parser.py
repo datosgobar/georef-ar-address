@@ -19,7 +19,6 @@ GRAMMAR_PATH = os.path.join(GRAMMARS_DIR, 'address-ar.cfg')
 START_PRODUCTION = 'address'
 
 ADDRESS_DATA_TEMPLATE = {
-    'address': None,
     'street_names': [],
     'door_number': {
         'value': None,
@@ -63,7 +62,7 @@ importante.
 """
 
 _TOKEN_TYPES = [
-    ('AND_WORD', r'y\s(?=\D)|e\s(?=i)'),
+    ('AND_WORD', r'y\s(?=\D)|e\s(?=h?i)'),
     ('AND_NUM', r'y\s(?=\d)'),
     ('OF', r'de\s'),
     ('FLOOR', r'piso(\s|$)'),
@@ -512,7 +511,6 @@ class AddressParser:
 
         Salida:
         {
-            "address": "Tucumán 1300 1° A",
             "door_number": {
                 "unit": null,
                 "value": "1300"
@@ -537,7 +535,6 @@ class AddressParser:
         processed = self._normalize_address(address)
 
         data = copy.deepcopy(ADDRESS_DATA_TEMPLATE)
-        data['address'] = address
 
         if not processed:
             return data
