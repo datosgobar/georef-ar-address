@@ -489,6 +489,30 @@
         ]
     },
     {
+        "address": "calle 99 1000 2 A",
+        "floor": "2 A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
+        "address": "calle 99 1000 2 A Localidad Desaguadero",
+        "floor": "2 A",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 99"
+        ]
+    },
+    {
         "address": "calle 99 1000 piso 1° A",
         "floor": "piso 1° A",
         "type": "simple",
@@ -1008,6 +1032,17 @@
         "door_number": {
             "value": "1000",
             "unit": "N"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 villa balnearia",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
         },
         "street_names": [
             "santa fe"

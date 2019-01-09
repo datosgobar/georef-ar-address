@@ -143,5 +143,14 @@
 	    "unit": null,
 	    "value": "2000"
 	}
+    },
+    {
+	"address": "Ruta 33 s/n Villa Chacón",
+	"type": "simple",
+	"street_names": ["Ruta 33"],
+	"door_number": {
+	    "unit": null,
+	    "value": "s/n"
+	}
     }
 ]
