@@ -152,5 +152,14 @@
 	    "unit": null,
 	    "value": "s/n"
 	}
+    },
+    {
+	"address": "PERIODISTA PRIETO 123 - PDO. LANUS",
+	"type": "single",
+	"street_names": ["PERIODISTA PRIETO"],
+	"door_number": {
+	    "unit": null,
+	    "value": "123"
+	}
     }
 ]

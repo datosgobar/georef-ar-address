@@ -436,17 +436,19 @@ class AddressParser:
                 encontrar uno inequívocamente, o None si no fue posible.
 
         """
-        if len(visitors) > 1:
-            visitors.sort(key=lambda v: v.rank, reverse=True)
+        if len(visitors) == 1:
+            return visitors[0]
 
-            # La lista de árboles ahora está ordenada de mejor a peor. Comparar
-            # el rango (puntaje) del primer elemento con el del segundo: si son
-            # iguales, entonces hay dos o más árboles con el mismo rango
-            # maximal. Esto quiere decir que todos estos árboles son una
-            # solución viable, pero no es posible distinguir cuál de ellos es
-            # el más adecuado. Si sucede esto, devolver None.
-            if visitors[0].rank == visitors[1].rank:
-                return None
+        visitors.sort(key=lambda v: v.rank, reverse=True)
+
+        # La lista de árboles ahora está ordenada de mejor a peor. Comparar
+        # el rango (puntaje) del primer elemento con el del segundo: si son
+        # iguales, entonces hay dos o más árboles con el mismo rango
+        # maximal. Esto quiere decir que todos estos árboles son una
+        # solución viable, pero no es posible distinguir cuál de ellos es
+        # el más adecuado. Si sucede esto, devolver None.
+        if visitors[0].rank == visitors[1].rank:
+            return None
 
         return visitors[0]
 
