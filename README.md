@@ -62,7 +62,7 @@ Para utilizar la librería desde Python, se debe instanciar un objeto de tipo `A
         "unit": "N°",
         "value": "1100"
     },
-    "floor": null,
+    "floor": None,
     "street_names": [
         "Sarmiento"
     ],
