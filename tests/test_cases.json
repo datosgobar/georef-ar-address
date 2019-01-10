@@ -1,7 +1,7 @@
 [
     {
         "address": "foo y bar y baz",
-        "type": "none",
+        "type": null,
         "door_number": {
             "value": null,
             "unit": null
@@ -9,7 +9,7 @@
     },
     {
         "address": "foo entre bar y baz y foo",
-        "type": "none",
+        "type": null,
         "door_number": {
             "value": null,
             "unit": null

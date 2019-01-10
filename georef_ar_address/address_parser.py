@@ -25,7 +25,7 @@ ADDRESS_DATA_TEMPLATE = {
         'unit': None
     },
     'floor': None,
-    'type': 'none'
+    'type': None
 }
 """dict: Estructura de respuesta para el método AddressParser.parse().
 Los valores internos son modificados luego de finalizar la extracción de

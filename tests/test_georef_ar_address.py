@@ -70,7 +70,7 @@ class AddressParserTest(TestCase):
         los tests.
 
         Args:
-            address_type (str): Tipo de dirección ('none', 'simple', 'isct',
+            address_type (str): Tipo de dirección (None, 'simple', 'isct',
                 'btwn').
 
         """
@@ -96,9 +96,9 @@ class MockAddressParserTest(AddressParserTest):
     _test_file = test_file_path('test_cases.json')
 
     def test_none_cases(self):
-        """Comprobar que los casos de tipo 'none' son parseados
+        """Comprobar que los casos de tipo None son parseados
         correctamente."""
-        self.assert_cases_for_type('none')
+        self.assert_cases_for_type(None)
 
     def test_simple_cases(self):
         """Comprobar que los casos de tipo 'simple' son parseados
@@ -120,9 +120,9 @@ class RealAddressParserTest(AddressParserTest):
     _test_file = test_file_path('real_cases.json')
 
     def test_none_cases(self):
-        """Comprobar que los casos de tipo 'none' son parseados
+        """Comprobar que los casos de tipo None son parseados
         correctamente."""
-        self.assert_cases_for_type('none')
+        self.assert_cases_for_type(None)
 
     def test_simple_cases(self):
         """Comprobar que los casos de tipo 'simple' son parseados
@@ -146,14 +146,14 @@ class InvalidAddressesParserTest(TestCase):
 
     def test_invalid_token(self):
         """Las direcciones que generen tokens inválidos deberían tener tipo
-        'none'."""
+        None."""
         data = self.parser.parse('Tuc#^^%mán 11100')
-        self.assertEqual(data['type'], 'none')
+        self.assertEqual(data['type'], None)
 
     def test_empty_address(self):
-        """Un string vacío como dirección debería tener tipo 'none'."""
+        """Un string vacío como dirección debería tener tipo None."""
         data = self.parser.parse('')
-        self.assertEqual(data['type'], 'none')
+        self.assertEqual(data['type'], None)
 
 
 if __name__ == '__main__':
