@@ -1,5 +1,8 @@
 # Historial de versiones para `georef-ar-address`
 
+## **0.0.4** - 2019/01/10
+- El tipo de las direcciones inválidas ahora es `None` en lugar del string `'none'`.
+
 ## **0.0.3** - 2019/01/09
 - Permite direcciones de tipo `simple` con detalles de ubicación al final. Las siguientes direcciones ahora son interpretadas correctamente:
 	- "Periodista Prieto 123 - Partido Lanús"
