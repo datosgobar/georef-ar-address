@@ -122,8 +122,9 @@ def with_labels(labels):
         list: Lista de valores.
 
     Returns:
-        lambda: función que retorna True si el llamado a 'label' de su
+        function: función que retorna True si el llamado a 'label' de su
             argumento retorna un objeto que pertenece a un conjunto de valores.
+
     """
     return lambda t: t.label() in set(labels)
 
@@ -336,15 +337,15 @@ class AddressParser:
     aumenta considerablemente la performance del proceso de extracción.
 
     Attributes:
-        self._parser (nltk.EarleyChartParser): Instancia de parser Earley
-            utilizado en la etapa de parseo.
-        self._token_regexp (_sre.SRE_Pattern): Expresión regular utilizada en
-            la generación de tokens.
-        self._separation_regexp (_sre.SRE_Pattern): Expresión regular utilizada
-            en la etapa de normalización (separación de letras y números).
-        self._normalization_regexp (_sre.SRE_Pattern): Expresión regular
-            utilizada en la etapa de normalización.
-        self._cache (dict): Objeto dict-like utilizado para cachear árboles de
+        _parser (nltk.EarleyChartParser): Instancia de parser Earley utilizado
+            en la etapa de parseo.
+        _token_regexp (_sre.SRE_Pattern): Expresión regular utilizada en la
+            generación de tokens.
+        _separation_regexp (_sre.SRE_Pattern): Expresión regular utilizada en
+            la etapa de normalización (separación de letras y números).
+        _normalization_regexp (_sre.SRE_Pattern): Expresión regular utilizada
+            en la etapa de normalización.
+        _cache (dict): Objeto dict-like utilizado para cachear árboles de
             parseo. Puede ser 'None' (no utilizar cache).
 
     """
