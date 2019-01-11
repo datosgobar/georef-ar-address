@@ -62,7 +62,7 @@ importante.
 """
 
 _TOKEN_TYPES = [
-    ('AND_WORD', r'y\s(?=\D)|e\s(?=h?i)'),
+    ('AND_WORD', r'y\s(?=\D)|e\s(?=h?[iy])'),
     ('AND_NUM', r'y\s(?=\d)'),
     ('OF', r'de\s'),
     ('FLOOR', r'piso(\s|$)'),

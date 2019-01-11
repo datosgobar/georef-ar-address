@@ -1633,6 +1633,30 @@
         ]
     },
     {
+        "address": "cordoba e yrigoyen",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "yrigoyen"
+        ]
+    },
+    {
+        "address": "cordoba e hydra",
+        "type": "isct",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "cordoba",
+            "hydra"
+        ]
+    },
+    {
         "address": "cordoba esq jujuy",
         "type": "isct",
         "door_number": {
