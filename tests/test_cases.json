@@ -1049,6 +1049,39 @@
         ]
     },
     {
+        "address": "santa fe 1000- villa balnearia",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 1000 -villa balnearia",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe -Nro 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "Nro"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
         "address": "santa fe N1000",
         "type": "simple",
         "door_number": {

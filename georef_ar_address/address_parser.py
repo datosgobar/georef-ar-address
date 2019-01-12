@@ -40,6 +40,8 @@ letras seguidas de números.
 _NORMALIZATION_REGEXPS = [
     # Remover aclaraciones entre paréntesis
     r'\((ex|antes|frente|mano|(al\s)?lado).+?\)',
+    # Remover información de localidad
+    r'([vb][°ºª]|barrio\s|bo\.\s).*',
     # Remover aclaraciones de orientación ("(N)" == "norte")
     r'\([sneo]\)',
     # Remover comas utilizadas para separar texto
@@ -48,10 +50,8 @@ _NORMALIZATION_REGEXPS = [
     r'[()"?]',
     # Remover guiones al final del texto
     r'-+$',
-    # Remover guiones entre espacios
-    r'\s-\s',
-    # Remver información de barrio
-    r'(b[°ºª]|barrio\s|bo\.\s).*',
+    # Remover guiones con espacios
+    r'\s-+|-+\s',
     # Remover palabra 'al' antes de un número
     r'\sal\s+(?=\d)'
 ]
