@@ -1,5 +1,10 @@
 # Historial de versiones para `georef-ar-address`
 
+## **0.0.5** - 2019/01/14
+- Modifica los nombres de los tipos de direcciones `btwn` a `between` e `isct` a `intersection`.
+- Remueve restricciones a caracteres aceptados por el método `parse()`: las direcciones como "sÃnta fe 1000" ahora son válidas. Este cambio facilita el procesamiento de direcciones con caracteres erróneos causados por problemas de codificado.
+- Corrige interpretación de casos `intersection` donde la segunda calle comienza con "hy" o "y".
+
 ## **0.0.4** - 2019/01/10
 - El tipo de las direcciones inválidas ahora es `None` en lugar del string `'none'`.
 
