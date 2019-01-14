@@ -69,25 +69,25 @@ código es responsable por su funcionamiento.
 
 ### 1) Normalización
 
-**INPUT:** string original
+**Entrada:** string original
 
 En el paso de normalización, se remueven partes del string de entrada que no son de utilidad o que no representan información útil. También se corrigen errores comunes como por ejemplo secuencias de letras pegadas a números. El procesamiento se realiza utilizando expresiones regulares.
 
-**OUTPUT:** string normalizado
+**Salida:** string normalizado
 
 ### 2) Tokenización
 
-**INPUT:** string normalizado
+**Entrada:** string normalizado
 
 El en paso de tokenización, se transforma el string de entrada a una lista de tokens. Un token es una tupla de `(valor, TIPO)`, donde "valor" es un valor extraído del string de entrada, y `TIPO` es un tipo que se le asigna a ese valor, dependiendo de su contenido. Por ejemplo, el valor "hola" tiene el tipo `WORD`, mientras que "432" tiene el tipo `NUM`. La lista de tokens se genera dividiendo el string de entrada en partes (separando por espacios) y asignando cada parte resultante a un tipo de token.
 
 Como ejemplo, el string de entrada "Santa Fe 1000" resultaría en la siguiente lista de tokens: `[("Santa", "WORD"), ("Fe", "WORD"), ("1000", "NUM")]`.
 
-**OUTPUT:** lista de tokens
+**Salida:** lista de tokens
 
 ### 3) Parseo
 
-**INPUT:** lista de tokens
+**Entrada:** lista de tokens
 
 En el paso de parseo, se toma la lista de tipos tokens y se intenta construir un árbol de parseo utilizando la gramática libre de contexto definida en el archivo "address-ar.cfg". El parseo se realiza utilizando la clase `EarleyChartParser` de la librería de procesamiento de lenguaje natural NLTK.
 
@@ -95,11 +95,11 @@ Es importante notar que se utilizan solo los tipos de los tokens en el momento d
 
 El parseo puede resultar en una lista vacía, o en una lista con cualquier cantidad de parseos posibles para la lista de tipos de tokens dada.
 
-**OUTPUT:** lista de árboles de parseo
+**Salida:** lista de árboles de parseo
 
 ### 4) Desambiguación
 
-**INPUT:** lista de árboles de parseo
+**Entrada:** lista de árboles de parseo
 
 En el paso de desambiguación, se toman todos los árboles de parseo obtenidos, y se elige el mejor, basándose en tres distintos criterios:
 
@@ -109,19 +109,26 @@ Se priorizan también los árboles que posean alturas, para evitar interpretar "
 
 Finalmente, dependiendo de si se encontró una altura o no, se le asigna al árbol una prioridad adicional, dependiente del tipo de dirección encontrado. Las direcciones de tipo `between` siempre tienen mayor prioridad ya que poseen una estructura más compleja y su presencia normalmente indica que la dirección efectivamente es de tipo `between`.
 
-Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `intersection`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como "Vicente Lopez y Planes 120" como tipo `simple` (y no como tipo `intersection`, a pesar de contener una "y"). Un problema generado por esto es que direcciones como "Tucumán y Belgrano 1231" son interpretadas como `simple` y no `intersection`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta "Mitre y Misiones" como `intersection`.
+Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `intersection`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como "Vicente Lopez y Planes 120" como tipo `simple` (y no como tipo `intersection`, a pesar de contener una "y"). Un problema generado por esto es que direcciones como "Tucumán y Belgrano 1231" son interpretadas como `simple` y no `intersection`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta "Mitre y Misiones" como `intersection`. En resumen:
 
-El orden de los criterios mencionados es importante. Los primeros criterios tienen más importancia que los últimos. Este orden fue determinado experimentalmente, probando con varios ejemplos de direcciones reales hasta hallar la mejor opción.
+|           Ejemplo          |    Tipo real   | Tipo en `georef-ar-address` |
+|:--------------------------:|:--------------:|:---------------------------:|
+| Vicente López y Planes 120 |    `simple`    |          `simple` ✔         |
+|   Tucumán y Belgrano 1231  | `intersection` |          `simple` ✗         |
+|  Sarmiento 450 y Esmeralda | `intersection` |       `intersection` ✔      |
+|      Mitre y Misiones      | `intersection` |       `intersection` ✔      |
 
-**OUTPUT:** árbol de parseo, o `None`
+El orden de los criterios mencionados es importante. Los primeros criterios tienen más importancia que los últimos. Este orden fue determinado experimentalmente, probando con varios ejemplos de direcciones reales hasta hallar la mejor opción. Como se mencionó anteriormente, se priorizaron algunas estructuras de direcciones sobre otras, con el fin de poder procsar la mayor cantidad de datos posibles en casos reales.
+
+**Salida:** árbol de parseo, o `None`
 
 ### 5) Ensamblado
 
-**INPUT:** árbol de parseo
+**Entrada:** árbol de parseo
 
 Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo utiliza para identificar las componentes de la dirección contenida en el string de entrada original. Para lograr esto, se recorre el árbol (*preorder*, izquierda a derecha) buscando nodos conteniendo nombres de calles, alturas, etc. y se calcula a qué parte del string original pertenecen. Las componentes resultantes se insertan en un diccionario (`dict`), y se devuelve la información al usuario.
 
-**OUTPUT:** diccionario con componentes de la dirección
+**Salida:** diccionario con componentes de la dirección
 
 ### Manejo de Errores
 

@@ -12,6 +12,8 @@ def address_parser_repl():
     import json
     parser = AddressParser(cache={})
 
+    print('Ingresar una dirección y presionar [ENTER] para extraer '
+          'sus componentes.')
     while True:
         try:
             address = input('> ')
