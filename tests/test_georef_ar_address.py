@@ -52,7 +52,12 @@ class AddressParserTest(TestCase):
         with open(cls._test_file) as f:  # pylint: disable=no-member
             cls._test_cases = json.load(f)
 
-        assert cls._test_cases
+        address_types = {None, 'simple', 'isct', 'btwn'}
+
+        assert all(
+            test_case['type'] in address_types
+            for test_case in cls._test_cases
+        ) and cls._test_cases
 
     def assert_cases_for_type(self, address_type):
         """Dado un tipo de dirección, leer todos los casos de ese tipo del
@@ -143,12 +148,6 @@ class RealAddressParserTest(AddressParserTest):
 class InvalidAddressesParserTest(TestCase):
     def setUp(self):
         self.parser = AddressParser()
-
-    def test_invalid_token(self):
-        """Las direcciones que generen tokens inválidos deberían tener tipo
-        None."""
-        data = self.parser.parse('Tuc#^^%mán 11100')
-        self.assertEqual(data['type'], None)
 
     def test_empty_address(self):
         """Un string vacío como dirección debería tener tipo None."""

@@ -46,8 +46,9 @@ _NORMALIZATION_REGEXPS = [
     r'\([sneo]\)',
     # Remover comas utilizadas para separar texto
     r',(\s|$)|\s,',
-    # Remover caracteres no deseados
-    r'[()"?]',
+    # Algunos caracteres pueden ser removidos sin modificar el significado del
+    # texto que los rodea
+    r'[()"|]',
     # Remover guiones al final del texto
     r'-+$',
     # Remover guiones con espacios
@@ -86,23 +87,12 @@ _TOKEN_TYPES = [
     ('NUM', r'\d+((\s|$)|[°º])'),
     ('N', r'n\s'),
     ('LETTER', r'[^\d\W](\s|$|\.)'),
-    ('WORD', r'(\w|\.|\'|`|´|:|/)+'),
-    ('WS', r'\s'),
-    ('UNKNOWN', '.+')
+    ('WORD', r'[^\s]+'),
+    ('WS', r'\s')
 ]
 """list: Expresiones regulares utilizadas para crear cada tipo de token en la
 etapa de tokenización.
 """
-
-
-class InvalidTokenException(Exception):
-    """Excepción lanzada cuando se detecta un token de tipo UNKNOWN. Los tokens
-    de tipo UNKNOWN representan texto que no pudieron ser categorizados dentro
-    de ningún otro tipo de token.
-
-    """
-
-    pass
 
 
 class InvalidGrammarException(Exception):
@@ -393,9 +383,7 @@ class AddressParser:
             kind = mo.lastgroup
             value = mo.group().strip()
 
-            if kind == 'UNKNOWN':
-                raise InvalidTokenException('Value: {}'.format(value))
-            elif kind != 'WS':
+            if kind != 'WS':
                 tokens.append((value, kind))
 
         return tokens
@@ -542,10 +530,7 @@ class AddressParser:
         if not processed:
             return data
 
-        try:
-            tokens = self._tokenize_address(processed)
-        except InvalidTokenException:
-            return data
+        tokens = self._tokenize_address(processed)
 
         visitor = self._parse_token_types([
             t_type for _, t_type in tokens

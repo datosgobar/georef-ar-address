@@ -125,7 +125,7 @@ Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo ut
 
 ### Manejo de Errores
 
-Si el string de entrada contiene un valor que no puede ser interpretado como una dirección, se retorna `None` como tipo de dirección. Esto puede suceder si se encotraron dos o más interpretaciones posibles del contenido del string, y no se pudo decidir cuál fue la correcta (en el paso de desambiguación). Esto también puede suceder si el string contiene caracteres no aceptados por el tokenizador ("%", "&", etc.).
+Si el string de entrada contiene un valor que no puede ser interpretado como una dirección, se retorna `None` como tipo de dirección. Esto puede suceder si se encotraron dos o más interpretaciones posibles del contenido del string, y no se pudo decidir cuál fue la correcta (en el paso de desambiguación).
 
 ## Performance
 La clase `AddressParser` incluye la opción de especificar un objeto `cache` a utilizar como cache durante el proceso de extracción. El objeto debe ser una instancia de `dict`, o bien un objeto que se comporte como un `dict`. Para realizar el cacheo, se toma la cadena de tipos de tokens recibidos en la etapa 3 (parseo), se los *hashea* y luego se los asigna a la salida de la etapa 4 (desambiguación). De esta forma, cuando se reciben dos direcciones que generan la misma lista de tipos de tokens, se reutiliza el mejor árbol de parseo y se evita tener que realizar un parseo nuevo. Como ejemplo, las siguientes dos direcciones:

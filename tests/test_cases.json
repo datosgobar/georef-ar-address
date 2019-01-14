@@ -796,6 +796,39 @@
         ]
     },
     {
+        "address": "san%ta f?e 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "san%ta f?e"
+        ]
+    },
+    {
+        "address": "sÃnta fe* 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "sÃnta fe*"
+        ]
+    },
+    {
+        "address": "santa fe N| 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": "N"
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
         "address": "santa fe 1000 B° foobar",
         "type": "simple",
         "door_number": {

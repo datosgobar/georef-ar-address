@@ -155,11 +155,21 @@
     },
     {
 	"address": "PERIODISTA PRIETO 123 - PDO. LANUS",
-	"type": "single",
+	"type": "simple",
 	"street_names": ["PERIODISTA PRIETO"],
 	"door_number": {
 	    "unit": null,
 	    "value": "123"
 	}
+    },
+    {
+	"address": "AV. RIVADAVIA 1000, PISO 1|, DEPTO A",
+	"type": "simple",
+	"street_names": ["AV. RIVADAVIA"],
+	"door_number": {
+	    "unit": null,
+	    "value": "1000"
+	},
+	"floor": "PISO 1 DEPTO A"
     }
 ]
