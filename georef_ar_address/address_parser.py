@@ -286,9 +286,9 @@ class TreeVisitor:
         # La presencia o no de una altura afecta el rango del tipo de la
         # dirección
         if has_door_number:
-            ranks = ['isct', 'simple', 'btwn']
+            ranks = ['intersection', 'simple', 'between']
         else:
-            ranks = ['simple', 'isct', 'btwn']
+            ranks = ['simple', 'intersection', 'between']
 
         rank = ranks.index(self.address_type)
 

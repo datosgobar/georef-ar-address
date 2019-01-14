@@ -52,7 +52,7 @@ class AddressParserTest(TestCase):
         with open(cls._test_file) as f:  # pylint: disable=no-member
             cls._test_cases = json.load(f)
 
-        address_types = {None, 'simple', 'isct', 'btwn'}
+        address_types = {None, 'simple', 'intersection', 'between'}
 
         assert all(
             test_case['type'] in address_types
@@ -75,8 +75,8 @@ class AddressParserTest(TestCase):
         los tests.
 
         Args:
-            address_type (str): Tipo de dirección (None, 'simple', 'isct',
-                'btwn').
+            address_type (str): Tipo de dirección (None, 'simple',
+                'intersection', 'between').
 
         """
         test_cases = [
@@ -110,15 +110,15 @@ class MockAddressParserTest(AddressParserTest):
         correctamente."""
         self.assert_cases_for_type('simple')
 
-    def test_isct_cases(self):
-        """Comprobar que los casos de tipo 'isct' son parseados
+    def test_intersection_cases(self):
+        """Comprobar que los casos de tipo 'intersection' son parseados
         correctamente."""
-        self.assert_cases_for_type('isct')
+        self.assert_cases_for_type('intersection')
 
-    def test_btwn_cases(self):
-        """Comprobar que los casos de tipo 'btwn' son parseados
+    def test_between_cases(self):
+        """Comprobar que los casos de tipo 'between' son parseados
         correctamente."""
-        self.assert_cases_for_type('btwn')
+        self.assert_cases_for_type('between')
 
 
 class RealAddressParserTest(AddressParserTest):
@@ -134,15 +134,15 @@ class RealAddressParserTest(AddressParserTest):
         correctamente."""
         self.assert_cases_for_type('simple')
 
-    def test_isct_cases(self):
-        """Comprobar que los casos de tipo 'isct' son parseados
+    def test_intersection_cases(self):
+        """Comprobar que los casos de tipo 'intersection' son parseados
         correctamente."""
-        self.assert_cases_for_type('isct')
+        self.assert_cases_for_type('intersection')
 
-    def test_btwn_cases(self):
-        """Comprobar que los casos de tipo 'btwn' son parseados
+    def test_between_cases(self):
+        """Comprobar que los casos de tipo 'between' son parseados
         correctamente."""
-        self.assert_cases_for_type('btwn')
+        self.assert_cases_for_type('between')
 
 
 class InvalidAddressesParserTest(TestCase):

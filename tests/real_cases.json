@@ -1,7 +1,7 @@
 [
     {
 	"address": "Calle 12 Nro. 745-749 e/ 13 y 14",
-	"type": "btwn",
+	"type": "between",
 	"street_names": [
 	    "Calle 12",
 	    "13",
@@ -14,7 +14,7 @@
     },
     {
 	"address": "Dr. Udo Bress e/44 y 45 S/N",
-	"type": "btwn",
+	"type": "between",
 	"street_names": ["Dr. Udo Bress", "44", "45"],
 	"door_number": {
 	    "unit": null,
@@ -53,7 +53,7 @@
     },
     {
 	"address": "av. arturo frondizi 2000 y av. 12 de septiembre",
-	"type": "isct",
+	"type": "intersection",
 	"street_names": [
 	    "av. arturo frondizi",
 	    "av. 12 de septiembre"
@@ -95,7 +95,7 @@
     },
     {
 	"address": "Colombia e/R. de Esc. y San Lorenzo S/N",
-	"type": "btwn",
+	"type": "between",
 	"street_names": [
 	    "Colombia",
 	    "R. de Esc.",
@@ -108,7 +108,7 @@
     },
     {
 	"address": "29 Y 11 NRO. 302",
-	"type": "isct",
+	"type": "intersection",
 	"street_names": ["29", "11"],
 	"door_number": {
 	    "unit": "NRO.",
@@ -117,7 +117,7 @@
     },
     {
 	"address": "Av. José León Suarez y esq. Canadá 4322",
-	"type": "isct",
+	"type": "intersection",
 	"street_names": [
 	    "Av. José León Suarez",
 	    "Canadá"
@@ -129,7 +129,7 @@
     },
     {
 	"address": "AV. QUESADA Y 2 DE ABRIL DE 1982",
-	"type": "isct",
+	"type": "intersection",
 	"street_names": [
 	    "AV. QUESADA",
 	    "2 DE ABRIL DE 1982"

@@ -5,8 +5,8 @@
 El objetivo de la librería `georef-ar-address` es extraer de un string conteniendo una dirección las componentes individuales que la componen, realizando todo el procesamiento localmente. Es importarte resaltar que la entrada (input) utilizada es un string común, sin ningún tipo de metadatos que puedan proveer información sobre su contenido. Para simplificar el proceso de extracción, se definieron tres tipos de direcciones posibles a aceptar como entrada:
 
 - `simple`: nombre de calle y altura opcional (con piso opcional)
-- `isct`: intersección de calles, con altura opcional (con piso opcional)
-- `btwn`: nombre de calle y altura opcional (con piso opcional) entre otras dos
+- `intersection`: intersección de calles, con altura opcional (con piso opcional)
+- `between`: nombre de calle y altura opcional (con piso opcional) entre otras dos
   calles.
 - `None`: utilizado para representar direcciones que no pudieron ser procesadas
 
@@ -40,7 +40,7 @@ Esta compuesta de las siguientes componentes:
     altura (unidad): (no tiene)
     altura (valor):  (no tiene)
     piso:            (no tiene)
-    tipo:            "isct" (intersección)
+    tipo:            "intersection" (intersección)
 
 Y un último ejemplo:
 
@@ -52,7 +52,7 @@ Esta compuesta de las siguientes componentes:
     altura (unidad): (no tiene)
     altura (valor):  3133
     piso:            (no tiene)
-    tipo:            "btwn" (calle entre calles)
+    tipo:            "between" (calle entre calles)
 
 ## Diseño
 
@@ -107,9 +107,9 @@ Se priorizan árboles que hayan encontrado calles "sin nombre", es decir, calles
 
 Se priorizan también los árboles que posean alturas, para evitar interpretar "Rosario 1003" como una calle llamada "Rosario 1003", en lugar de una calle llamada "Rosario" con altura "1003".
 
-Finalmente, dependiendo de si se encontró una altura o no, se le asigna al árbol una prioridad adicional, dependiente del tipo de dirección encontrado. Las direcciones de tipo `btwn` siempre tienen mayor prioridad ya que poseen una estructura más compleja y su presencia normalmente indica que la dirección efectivamente es de tipo `btwn`.
+Finalmente, dependiendo de si se encontró una altura o no, se le asigna al árbol una prioridad adicional, dependiente del tipo de dirección encontrado. Las direcciones de tipo `between` siempre tienen mayor prioridad ya que poseen una estructura más compleja y su presencia normalmente indica que la dirección efectivamente es de tipo `between`.
 
-Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `isct`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como "Vicente Lopez y Planes 120" como tipo `simple` (y no como tipo `isct`, a pesar de contener una "y"). Un problema generado por esto es que direcciones como "Tucumán y Belgrano 1231" son interpretadas como `simple` y no `isct`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta "Mitre y Misiones" como `isct`.
+Si el árbol de parseo contiene una altura, se prioriza luego las direcciones de tipo `simple`, y finalmente las de tipo `intersection`. En caso de no contener una altura, el orden de los dos tipos se intercambian. Este orden permite interpretar direcciones como "Vicente Lopez y Planes 120" como tipo `simple` (y no como tipo `intersection`, a pesar de contener una "y"). Un problema generado por esto es que direcciones como "Tucumán y Belgrano 1231" son interpretadas como `simple` y no `intersection`. Aunque en algunos casos es posible evitar el error, pogramáticamente no hay mucho que se pueda hacer para asegurarse de que no se suceda. De todas formas, en listados de direcciones utilizados durante el desarrollo de la librería, la cantidad de direcciones encontradas con esa estructura fue menor al 1%. Cuando el árbol no contiene una altura, se interpreta "Mitre y Misiones" como `intersection`.
 
 El orden de los criterios mencionados es importante. Los primeros criterios tienen más importancia que los últimos. Este orden fue determinado experimentalmente, probando con varios ejemplos de direcciones reales hasta hallar la mejor opción.
 

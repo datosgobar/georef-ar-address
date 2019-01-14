@@ -1628,7 +1628,7 @@
     },
     {
         "address": "cordoba y jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1640,7 +1640,7 @@
     },
     {
         "address": "cordoba y 25 de mayo",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1652,7 +1652,7 @@
     },
     {
         "address": "cordoba y entre ríos",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1664,7 +1664,7 @@
     },
     {
         "address": "cordoba y calle 10",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1676,7 +1676,7 @@
     },
     {
         "address": "cordoba e independencia",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1688,7 +1688,7 @@
     },
     {
         "address": "cordoba e hipolito yrigoyen",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1700,7 +1700,7 @@
     },
     {
         "address": "cordoba e yrigoyen",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1712,7 +1712,7 @@
     },
     {
         "address": "cordoba e hydra",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1724,7 +1724,7 @@
     },
     {
         "address": "cordoba esq jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1736,7 +1736,7 @@
     },
     {
         "address": "cordoba esquina jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1748,7 +1748,7 @@
     },
     {
         "address": "cordoba esq/ jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1760,7 +1760,7 @@
     },
     {
         "address": "cordoba esq/jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1772,7 +1772,7 @@
     },
     {
         "address": "cordoba esq. jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1784,7 +1784,7 @@
     },
     {
         "address": "cordoba (esq jujuy)",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1796,7 +1796,7 @@
     },
     {
         "address": "cordoba (esq. jujuy)",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1808,7 +1808,7 @@
     },
     {
         "address": "cordoba (esq.jujuy)",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1820,7 +1820,7 @@
     },
     {
         "address": "cordoba (esquina jujuy)",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1832,7 +1832,7 @@
     },
     {
         "address": "cordoba, esq jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1844,7 +1844,7 @@
     },
     {
         "address": "cordoba, esquina jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1856,7 +1856,7 @@
     },
     {
         "address": "cordoba, esq. jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1868,7 +1868,7 @@
     },
     {
         "address": "cordoba, esq.jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1880,7 +1880,7 @@
     },
     {
         "address": "calle 48 bis esq.100",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1892,7 +1892,7 @@
     },
     {
         "address": "cordoba (Ex tucuman), esq. jujuy",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1904,7 +1904,7 @@
     },
     {
         "address": "1 esq. 2",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1916,7 +1916,7 @@
     },
     {
         "address": "1 y 2",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1928,7 +1928,7 @@
     },
     {
         "address": "1era junta y 2ndo de mayo",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1940,7 +1940,7 @@
     },
     {
         "address": "calle s/n y cordoba",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1952,7 +1952,7 @@
     },
     {
         "address": "av. entre rios y cordoba",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": null,
             "unit": null
@@ -1964,7 +1964,7 @@
     },
     {
         "address": "santa fe 1000 y cordoba",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -1976,7 +1976,7 @@
     },
     {
         "address": "santa fe 1000 y avenida s/n",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -1988,7 +1988,7 @@
     },
     {
         "address": "1 y 2 S/N",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "S/N",
             "unit": null
@@ -2000,7 +2000,7 @@
     },
     {
         "address": "cordoba y 12 de octubre 1000",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -2012,7 +2012,7 @@
     },
     {
         "address": "ruta 5 y ruta 2 km 8",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "8",
             "unit": "km"
@@ -2024,7 +2024,7 @@
     },
     {
         "address": "santa fe s/n y cordoba",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "s/n",
             "unit": null
@@ -2036,7 +2036,7 @@
     },
     {
         "address": "calle s/n 3000 y cordoba",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "3000",
             "unit": null
@@ -2048,7 +2048,7 @@
     },
     {
         "address": "calle s/n s/n y cordoba",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "s/n",
             "unit": null
@@ -2060,7 +2060,7 @@
     },
     {
         "address": "1 3000 y 2",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "3000",
             "unit": null
@@ -2072,7 +2072,7 @@
     },
     {
         "address": "ruta nacional n° 3 km 3 y tucuman",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "3",
             "unit": "km"
@@ -2084,7 +2084,7 @@
     },
     {
         "address": "ruta nacional n° 3 (ex ruta 4) km 3 y tucuman",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "3",
             "unit": "km"
@@ -2097,7 +2097,7 @@
     {
         "address": "entre rios s/n 2 E e independencia",
         "floor": "2 E",
-        "type": "isct",
+        "type": "intersection",
         "door_number": {
             "value": "s/n",
             "unit": null
@@ -2109,7 +2109,7 @@
     },
     {
         "address": "salta entre sarmiento y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2122,7 +2122,7 @@
     },
     {
         "address": "salta entre entre ríos y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2135,7 +2135,7 @@
     },
     {
         "address": "salta entre sarmiento (EX santa fe) y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2148,7 +2148,7 @@
     },
     {
         "address": "salta e/ sarmiento y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2161,7 +2161,7 @@
     },
     {
         "address": "av. entre rios entre salta y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2174,7 +2174,7 @@
     },
     {
         "address": "salta e/calles sarmiento y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2187,7 +2187,7 @@
     },
     {
         "address": "salta, e/calles sarmiento y mitre",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2200,7 +2200,7 @@
     },
     {
         "address": "10, e/calles 11 y 12",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2213,7 +2213,7 @@
     },
     {
         "address": "calle 10, e/calles 11 y 12",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2226,7 +2226,7 @@
     },
     {
         "address": "10, e/ 11 y 12",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2239,7 +2239,7 @@
     },
     {
         "address": "10, e/ 11 y 9 de julio",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2252,7 +2252,7 @@
     },
     {
         "address": "9 de julio, entre 11 y 12",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2265,7 +2265,7 @@
     },
     {
         "address": "9 de julio, entre 11 e independencia",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2278,7 +2278,7 @@
     },
     {
         "address": "9 de julio e/ 25 de mayo y tucuman",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2291,7 +2291,7 @@
     },
     {
         "address": "av.1 entre 2 y 3",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2304,7 +2304,7 @@
     },
     {
         "address": "1 entre 2 y 3",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2317,7 +2317,7 @@
     },
     {
         "address": "ruta N°3 entre ruta N° 4 y ruta nacional nro 33",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2330,7 +2330,7 @@
     },
     {
         "address": "ruta N°3 entre cordoba y tucuman",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2343,7 +2343,7 @@
     },
     {
         "address": "mitre e/cordoba y tucuman",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2356,7 +2356,7 @@
     },
     {
         "address": "29 e/1 y 9 de julio",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2369,7 +2369,7 @@
     },
     {
         "address": "29 e/1 (ex 2) y 9",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2382,7 +2382,7 @@
     },
     {
         "address": "29 e/ruta n°2 (ex ruta n°3) y 9",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": null,
             "unit": null
@@ -2395,7 +2395,7 @@
     },
     {
         "address": "tucuman 100 entre cordoba y salta",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "100",
             "unit": null
@@ -2408,7 +2408,7 @@
     },
     {
         "address": "tucuman s/numero entre cordoba y salta",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "s/numero",
             "unit": null
@@ -2421,7 +2421,7 @@
     },
     {
         "address": "tucuman 100 entre 10 y 11",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "100",
             "unit": null
@@ -2434,7 +2434,7 @@
     },
     {
         "address": "tucuman 100, entre 10 y 11",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "100",
             "unit": null
@@ -2447,7 +2447,7 @@
     },
     {
         "address": "tucuman 100 entre 10 y 11 bis",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "100",
             "unit": null
@@ -2460,7 +2460,7 @@
     },
     {
         "address": "av. 7 n° 1000 entre calles 10 y 11",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "1000",
             "unit": "n°"
@@ -2473,7 +2473,7 @@
     },
     {
         "address": "44 1000 entre 10 y 11",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -2486,7 +2486,7 @@
     },
     {
         "address": "tucuman 100 e/ruta n°2 (ex ruta n°3) y 9",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "100",
             "unit": null
@@ -2499,7 +2499,7 @@
     },
     {
         "address": "ruta nac. nro. 11 km 100 e/calles 10 y 11",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "100",
             "unit": "km"
@@ -2512,7 +2512,7 @@
     },
     {
         "address": "ruta nac. nro. 11 km 12 1/2 e/calles 10 y calle sn",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "12 1/2",
             "unit": "km"
@@ -2525,7 +2525,7 @@
     },
     {
         "address": "ruta nac. nro. 11 (ex 12) - km 12 1/2 e/calles 10 y calle sn",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "12 1/2",
             "unit": "km"
@@ -2538,7 +2538,7 @@
     },
     {
         "address": "vicente lopez y planes N°2000 2ndo E e/calle nro. 42 y entre ríos (ex cordoba)",
-        "type": "btwn",
+        "type": "between",
         "door_number": {
             "value": "2000",
             "unit": "N°"

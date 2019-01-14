@@ -28,7 +28,7 @@ Resultaría en la siguiente extracción de componentes:
         "25 de Mayo",
         "Bartolomé Mitre"
     ],
-    "type": "btwn"
+    "type": "between"
 }
 ```
 
@@ -78,8 +78,8 @@ El valor de retorno de `parse` es una instancia de `dict` conteniendo cada compo
 - `street_names`: Lista de nombres de calles contenidos en la dirección (e.g. `Santa Fe`, `Ruta 4`).
 - `type`: Tipo de dirección detectado. Los valores posibles son:
   - `simple`: Dirección compuesta de un nombre de calle y una altura opcional.
-  - `isct`: Dirección compuesta de dos nombres de calles en forma de intersección, con altura opcional.
-  - `btwn`: Dirección compuesta de tres nombres de calles, especificando una posición sobre una entre otras dos, con altura opcional.
+  - `intersection`: Dirección compuesta de dos nombres de calles en forma de intersección, con altura opcional.
+  - `between`: Dirección compuesta de tres nombres de calles, especificando una posición sobre una entre otras dos, con altura opcional.
   - `None`: Dirección de entrada inválida o ambigua.
 
 Todos los valores del diccionario son de tipo `str`, o toman el valor de `None`.
