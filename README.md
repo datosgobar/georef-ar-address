@@ -86,6 +86,39 @@ Todos los valores del diccionario son de tipo `str`, o toman el valor de `None`.
 
 El inicializador de la clase `AddressParser` acepta un parámetro `cache` de tipo `dict` (o equivalente), que le permite cachear internamente resultados de parseos para acelerar el procesamiento de direcciónes con estructuras similares.
 
+## Precisión
+
+La librería `georef-ar-address` (versión `0.0.5`) fue utilizada sobre varios listados de direcciones para poder estimar su precisión al momento de extraer componentes. A continuación, se explica el origen de cada listado y la fidelidad de los datos devueltos por la libería en cada caso:
+
+### Listado de datos abiertos
+
+El primer listado de direcciones que se construyó utiliza varias fuentes provenientes de distintos portales de datos abiertos del país, incluyendo el [Portal Nacional de Datos Abiertos](https://datos.gob.ar/). Se verificó que cada archivo utilizado posea un solo campo de dirección, sin tener la calle separada de la altura.
+
+El listado construido tiene aproximadamente 91000 direcciones. Se utilizó la librería sobre cada una, y los resultados fueron los siguientes:
+
+ - Direcciones categorizadas (no `None`): 95.1%
+ - **Aproximado de categorizaciones correctas: 88%**
+
+Para calcular el aproximado de categorizaciones correctas, se tomaron tres muestras de cien direcciones cada una, y se inspeccionó manualmente el resultado brindado por la librería para comprobar que la extración de datos fue correcta. El porcentaje aproximado de 88% categorizaciones correctas es esperado ya que el listado de direcciones construido es muy irregular y contiene grandes cantidades de direcciones escritas de formas impredecibles (es poco uniforme). Esto se debe a que el listado se construyó a partir de datos provenientes de más de 60 archivos distintos, cada uno potencialmente de una fuente distinta.
+
+### Listado de supermercados
+
+El segundo listado de direcciones probado fue el archivo [carrefour.csv](https://gist.github.com/mgaitan/9677204), que contiene la dirección de 325 sucursales del supermercado Carrefour. Los resultados fueron los siguientes:
+
+ - Direcciones categorizadas (no `None`): 99.3%
+ - **Categorizaciones correctas: 97.5%**
+
+En este caso, se categorizaron correctamente el 97.5% de las direcciones. El resultado fue comprobado manualmente.
+
+### Listado de sucursales del Banco Nación
+
+El tercer listado de direcciones probado fue el de las [sucursales del Banco de la Nación Argentina](http://www.agencia.mincyt.gob.ar/upload/listado_de_sucursales_bna_web.xls), con 617 elementos. Los resultados fueron los siguientes:
+
+ - Direcciones categorizadas (no `None`): 100%
+ - **Categorizaciones correctas: 97.7%**
+
+En este caso, se categorizaron correctamente el 97.5% de las direcciones. El resultado fue comprobado manualmente.
+
 ## Diseño
 
 Para leer sobre las desiciones de diseño y funcionamiento de `georef-ar-address`, ver el archivo [**design.md**](docs/design.md).
