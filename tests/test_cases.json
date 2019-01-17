@@ -1082,6 +1082,28 @@
         ]
     },
     {
+        "address": "calle 1 1000 provincia entre rios",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 1"
+        ]
+    },
+    {
+        "address": "calle 1 1000 san martin de los andes",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle 1"
+        ]
+    },
+    {
         "address": "santa fe 1000- villa balnearia",
         "type": "simple",
         "door_number": {

@@ -117,7 +117,7 @@ El tercer listado de direcciones probado fue el de las [sucursales del Banco de 
  - Direcciones categorizadas (no `None`): 100%
  - **Categorizaciones correctas: 97.7%**
 
-En este caso, se categorizaron correctamente el 97.5% de las direcciones. El resultado fue comprobado manualmente.
+En este caso, se categorizaron correctamente el 97.7% de las direcciones. El resultado fue comprobado manualmente.
 
 ## Diseño
 

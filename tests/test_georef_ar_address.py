@@ -1,16 +1,19 @@
 import json
 import os
 import unittest
-from unittest import TestCase
+import logging
 from georef_ar_address import AddressParser
 from georef_ar_address.address_parser import ADDRESS_DATA_TEMPLATE
+
+logging.basicConfig(format='%(message)s',
+                    level=os.environ.get('LOG_LEVEL', 'ERROR'))
 
 
 def test_file_path(filename):
     return os.path.join(os.path.dirname(__file__), filename)
 
 
-class CachedAddresParserTest(TestCase):
+class CachedAddresParserTest(unittest.TestCase):
     def test_address_parser_cache(self):
         """Al utilizar un cache, se debería agregar una key por cada
         esctructura de dirección distinta."""
@@ -44,12 +47,13 @@ class CachedAddresParserTest(TestCase):
         self.assertEqual(len(cache), 1)
 
 
-class AddressParserTest(TestCase):
+class AddressParserTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls._parser = AddressParser()
 
-        with open(cls._test_file) as f:  # pylint: disable=no-member
+        filename = cls._test_file  # pylint: disable=no-member
+        with open(filename) as f:
             cls._test_cases = json.load(f)
 
         address_types = {None, 'simple', 'intersection', 'between'}
@@ -58,6 +62,9 @@ class AddressParserTest(TestCase):
             test_case['type'] in address_types
             for test_case in cls._test_cases
         ) and cls._test_cases
+
+        logging.debug('\n%s: %s test cases', os.path.basename(filename),
+                      len(cls._test_cases))
 
     def assert_cases_for_type(self, address_type):
         """Dado un tipo de dirección, leer todos los casos de ese tipo del
@@ -145,7 +152,7 @@ class RealAddressParserTest(AddressParserTest):
         self.assert_cases_for_type('between')
 
 
-class InvalidAddressesParserTest(TestCase):
+class InvalidAddressesParserTest(unittest.TestCase):
     def setUp(self):
         self.parser = AddressParser()
 
