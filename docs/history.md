@@ -1,5 +1,9 @@
 # Historial de versiones para `georef-ar-address`
 
+## **0.0.6** - 2019/01/18
+- Mejora la detección de detalles de ubicación al final de direcciones de tipo `simple`.
+- Modifica valor de retorno de `AddressParser.parse()`: ahora se devuelve un objeto de tipo `AddressData` conteniendo las componentes extraídas de la dirección. Para obtener un diccionario de valores a partir del objeto `AddressData`, utilizar su método `to_dict()`.
+
 ## **0.0.5** - 2019/01/14
 - Modifica los nombres de los tipos de direcciones `btwn` a `between` e `isct` a `intersection`.
 - Remueve restricciones a caracteres aceptados por el método `parse()`: las direcciones como "sÃnta fe 1000" ahora son válidas. Este cambio facilita el procesamiento de direcciones con caracteres erróneos causados por problemas de codificado.

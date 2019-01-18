@@ -126,7 +126,7 @@ El orden de los criterios mencionados es importante. Los primeros criterios tien
 
 **Entrada:** árbol de parseo
 
-Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo utiliza para identificar las componentes de la dirección contenida en el string de entrada original. Para lograr esto, se recorre el árbol (*preorder*, izquierda a derecha) buscando nodos conteniendo nombres de calles, alturas, etc. y se calcula a qué parte del string original pertenecen. Las componentes resultantes se insertan en un diccionario (`dict`), y se devuelve la información al usuario.
+Finalmente, en el paso de ensamblado se toma el mejor árbol elegido, y se lo utiliza para identificar las componentes de la dirección contenida en el string de entrada original. Para lograr esto, se recorre el árbol (*preorder*, izquierda a derecha) buscando nodos conteniendo nombres de calles, alturas, etc. y se calcula a qué parte del string original pertenecen. Una vez obtenidas las componentes, se las devuelve al usuario utilizando la clase `AddressData`.
 
 **Salida:** diccionario con componentes de la dirección
 
