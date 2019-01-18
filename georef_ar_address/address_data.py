@@ -6,6 +6,8 @@ presentar de forma estandarizada los datos producidos por la clase
 
 """
 
+import re
+
 ADDRESS_TYPES = ['simple', 'intersection', 'between']
 
 
@@ -89,24 +91,80 @@ class AddressData:
             'floor': self._floor
         }
 
+    def normalized_door_number_value(self):
+        """Retorna el valor de la altura de la dirección como tipo numérico, si
+        es posible. Por ejemplo:
+
+        "1000" -> 1000  (int)
+        "1,3"  -> 1.3   (float)
+        "43.5" -> 43.5  (float)
+        "S/N"  -> None
+
+        Returns:
+            int, float, NoneType: Valor numérico de la dirección si es posible
+                leerlo, None en caso contrario.
+
+        """
+        if not self._door_number_value:
+            return None
+
+        # Intentar leer un float:
+        match = re.search(r'\d+[,.]\d+', self._door_number_value)
+        if match:
+            return float(match.group(0).replace(',', '.'))
+
+        # Intentar leer un int:
+        match = re.search(r'\d+', self._door_number_value)
+        return int(match.group(0)) if match else None
+
     @property
     def type(self):
+        """Getter para el atributo '_type'.
+
+        Returns:
+            str: Tipo de la dirección.
+
+        """
         return self._type
 
     @property
     def street_names(self):
+        """Getter para el atributo '_street_names'.
+
+        Returns:
+            list: Lista de nombre de calles de la dirección.
+
+        """
         return self._street_names
 
     @property
     def door_number_value(self):
+        """Getter para el atributo '_door_number_value'.
+
+        Returns:
+            str: Valor de la altura de la dirección.
+
+        """
         return self._door_number_value
 
     @property
     def door_number_unit(self):
+        """Getter para el atributo '_door_number_unit'.
+
+        Returns:
+            str: Unidad de la altura de la dirección.
+
+        """
         return self._door_number_unit
 
     @property
     def floor(self):
+        """Getter para el atributo '_floor'.
+
+        Returns:
+            str: Piso de la dirección.
+
+        """
         return self._floor
 
     def __repr__(self):

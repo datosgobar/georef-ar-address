@@ -16,20 +16,12 @@ Como ejemplo, utilizar la librería sobre la dirección:
 `Av. Libertador N1331 2ndo A e/25 de Mayo y Bartolomé Mitre`
 
 Resultaría en la siguiente extracción de componentes:
-```json
-{
-    "door_number": {
-        "unit": "N",
-        "value": "1331"
-    },
-    "floor": "2ndo A",
-    "street_names": [
-        "Av. Libertador",
-        "25 de Mayo",
-        "Bartolomé Mitre"
-    ],
-    "type": "between"
-}
+```
+street_names:        ["Av. Libertador", "25 de Mayo", "Bartolomé Mitre"]
+door_number.value:   "1331"
+door_number.unit:    "N"
+floor:               "2ndo A"
+type:                "between"
 ```
 
 ## Instalación
@@ -57,32 +49,29 @@ Para utilizar la librería desde Python, se debe instanciar un objeto de tipo `A
 >>> from georef_ar_address import AddressParser
 >>> parser = AddressParser()
 >>> parser.parse('Sarmiento N° 1100')
-{
-    "door_number": {
-        "unit": "N°",
-        "value": "1100"
-    },
-    "floor": None,
+AddressData({
     "street_names": [
         "Sarmiento"
     ],
+    "door_number": {
+        "value": "1100",
+        "unit": "N°"
+    },
+    "floor": None,
     "type": "simple"
-}
+})
 ```
 
-El valor de retorno de `parse` es una instancia de `dict` conteniendo cada componente de la dirección, en caso de una extracción exitosa. Los valores del diccionario son los siguientes:
+El valor de retorno de `parse` es una instancia de `AddressData` conteniendo cada componente de la dirección, en caso de una extracción exitosa. Los campos del objeto `AddressData` son los siguientes:
 
-- `door_number` `unit`: Unidad de la altura de la dirección (e.g. `N°`, `nro.`, `Km`).
-- `door_number` `value`: Valor de la altura de la dirección (e.g. `132`, `400/401`, `S/N`)
-- `floor`: Piso de la dirección (e.g. `2ndo B`, `PB`).
-- `street_names`: Lista de nombres de calles contenidos en la dirección (e.g. `Santa Fe`, `Ruta 4`).
-- `type`: Tipo de dirección detectado. Los valores posibles son:
+- `.street_names` *(list)*: Lista de nombres de calles contenidos en la dirección (e.g. `Santa Fe`, `Ruta 4`).
+- `.door_number_value` *(str)*: Valor de la altura de la dirección (e.g. `132`, `400/401`, `S/N`)
+- `.door_number_unit` *(str)*: Unidad de la altura de la dirección (e.g. `N°`, `nro.`, `Km`).
+- `.floor` *(str)*: Piso de la dirección (e.g. `2ndo B`, `PB`).
+- `.type` *(str)*: Tipo de dirección detectado. Los valores posibles son:
   - `simple`: Dirección compuesta de un nombre de calle y una altura opcional.
   - `intersection`: Dirección compuesta de dos nombres de calles en forma de intersección, con altura opcional.
   - `between`: Dirección compuesta de tres nombres de calles, especificando una posición sobre una entre otras dos, con altura opcional.
-  - `None`: Dirección de entrada inválida o ambigua.
-
-Todos los valores del diccionario son de tipo `str`, o toman el valor de `None`.
 
 El inicializador de la clase `AddressParser` acepta un parámetro `cache` de tipo `dict` (o equivalente), que le permite cachear internamente resultados de parseos para acelerar el procesamiento de direcciónes con estructuras similares.
 

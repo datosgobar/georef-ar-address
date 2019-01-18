@@ -23,7 +23,7 @@ def address_parser_repl():
         if not address:
             break
 
-        data = parser.parse(address)
+        data = parser.parse(address).to_dict()
         print(json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True))
 
     print()

@@ -163,5 +163,34 @@ class InvalidAddressesParserTest(unittest.TestCase):
         self.assertIsNone(data)
 
 
+class DoorNumberValueTest(unittest.TestCase):
+    def setUp(self):
+        self.parser = AddressParser()
+
+    def test_int_door_number_value(self):
+        """Una dirección con altura numérica en forma de número entero debería
+        retornar tipo int en 'normalized_door_number_value()'."""
+        data = self.parser.parse('Callao 1231')
+        self.assertEqual(data.normalized_door_number_value(), 1231)
+
+    def test_float_door_number_value_comma(self):
+        """Una dirección con altura numérica en forma de número decimal debería
+        retornar tipo float en 'normalized_door_number_value()' (con coma)."""
+        data = self.parser.parse('Ruta provincial 4 km 32,5')
+        self.assertAlmostEqual(data.normalized_door_number_value(), 32.5)
+
+    def test_float_door_number_value_point(self):
+        """Una dirección con altura numérica en forma de número decimal debería
+        retornar tipo float en 'normalized_door_number_value()' (con punto)."""
+        data = self.parser.parse('Ruta provincial 4 km 32.5')
+        self.assertAlmostEqual(data.normalized_door_number_value(), 32.5)
+
+    def test_none_door_number_value(self):
+        """Una dirección sin valor numérico debería retornar 'None' en
+        'normalized_door_number_value()'."""
+        data = self.parser.parse('Leandro Alem S/N')
+        self.assertIsNone(data.normalized_door_number_value())
+
+
 if __name__ == '__main__':
     unittest.main()
