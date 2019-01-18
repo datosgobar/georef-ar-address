@@ -1,21 +1,5 @@
 [
     {
-        "address": "foo y bar y baz",
-        "type": null,
-        "door_number": {
-            "value": null,
-            "unit": null
-        }
-    },
-    {
-        "address": "foo entre bar y baz y foo",
-        "type": null,
-        "door_number": {
-            "value": null,
-            "unit": null
-        }
-    },
-    {
         "address": "juan",
         "type": "simple",
         "door_number": {

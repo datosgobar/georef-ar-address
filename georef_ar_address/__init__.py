@@ -6,5 +6,6 @@ Define las variables que deberían imortarse al importar el módulo
 """
 
 from .address_parser import AddressParser
+from .address_data import ADDRESS_TYPES
 
-__all__ = ['AddressParser']
+__all__ = ['AddressParser', 'ADDRESS_TYPES']

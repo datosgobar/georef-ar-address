@@ -2,11 +2,19 @@ import json
 import os
 import unittest
 import logging
-from georef_ar_address import AddressParser
-from georef_ar_address.address_parser import ADDRESS_DATA_TEMPLATE
+from georef_ar_address import AddressParser, ADDRESS_TYPES
 
 logging.basicConfig(format='%(message)s',
                     level=os.environ.get('LOG_LEVEL', 'ERROR'))
+
+ADDRESS_DATA_TEMPLATE = {
+    'street_names': [],
+    'door_number': {
+        'value': None,
+        'unit': None
+    },
+    'floor': None
+}
 
 
 def test_file_path(filename):
@@ -56,10 +64,8 @@ class AddressParserTest(unittest.TestCase):
         with open(filename) as f:
             cls._test_cases = json.load(f)
 
-        address_types = {None, 'simple', 'intersection', 'between'}
-
         assert all(
-            test_case['type'] in address_types
+            test_case['type'] in ADDRESS_TYPES or test_case['type'] is None
             for test_case in cls._test_cases
         ) and cls._test_cases
 
@@ -99,18 +105,13 @@ class AddressParserTest(unittest.TestCase):
             self.assert_address_data(test_case['address'], test_case)
 
     def assert_address_data(self, address, data):
-        parsed = self._parser.parse(address)
+        parsed = self._parser.parse(address).to_dict()
         parsed['address'] = address
         self.assertDictEqual(parsed, data)
 
 
 class MockAddressParserTest(AddressParserTest):
     _test_file = test_file_path('test_cases.json')
-
-    def test_none_cases(self):
-        """Comprobar que los casos de tipo None son parseados
-        correctamente."""
-        self.assert_cases_for_type(None)
 
     def test_simple_cases(self):
         """Comprobar que los casos de tipo 'simple' son parseados
@@ -130,11 +131,6 @@ class MockAddressParserTest(AddressParserTest):
 
 class RealAddressParserTest(AddressParserTest):
     _test_file = test_file_path('real_cases.json')
-
-    def test_none_cases(self):
-        """Comprobar que los casos de tipo None son parseados
-        correctamente."""
-        self.assert_cases_for_type(None)
 
     def test_simple_cases(self):
         """Comprobar que los casos de tipo 'simple' son parseados
@@ -157,9 +153,14 @@ class InvalidAddressesParserTest(unittest.TestCase):
         self.parser = AddressParser()
 
     def test_empty_address(self):
-        """Un string vacío como dirección debería tener tipo None."""
+        """Un string vacío como dirección debería resultar en None."""
         data = self.parser.parse('')
-        self.assertEqual(data['type'], None)
+        self.assertIsNone(data)
+
+    def test_ambiguous_address(self):
+        """Una dirección ambigua debería resultar en None."""
+        data = self.parser.parse('Tucumán y Córdoba y Callao')
+        self.assertIsNone(data)
 
 
 if __name__ == '__main__':

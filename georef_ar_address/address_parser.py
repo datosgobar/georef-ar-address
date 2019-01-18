@@ -1,4 +1,4 @@
-"""Módulo address_parser.py
+"""Módulo address_parser.py de georef-ar-address
 
 Contiene clases y funciones utilizadas para extraer components de direcciones
 de calles en Argentina. La extracción opera exclusivamente con texto, y nunca
@@ -11,26 +11,12 @@ docs/design.md.
 
 import re
 import os
-import copy
 import nltk
+from .address_data import AddressData
 
 GRAMMARS_DIR = os.path.join(os.path.dirname(__file__), 'grammars')
 GRAMMAR_PATH = os.path.join(GRAMMARS_DIR, 'address-ar.cfg')
 START_PRODUCTION = 'address'
-
-ADDRESS_DATA_TEMPLATE = {
-    'street_names': [],
-    'door_number': {
-        'value': None,
-        'unit': None
-    },
-    'floor': None,
-    'type': None
-}
-"""dict: Estructura de respuesta para el método AddressParser.parse().
-Los valores internos son modificados luego de finalizar la extracción de
-componentes del valor de entrada.
-"""
 
 _SEPARATION_REGEXP = r'([^\W\d]{2,}\.?)(\d)'
 """str: Expresión regular utilizada en la etapa de normalización para separar
@@ -400,7 +386,7 @@ class AddressParser:
 
         """
         # Reemplazar partes no deseadas por espacios
-        normalized = self._normalization_regexp.sub(' ', address)
+        normalized = self._normalization_regexp.sub(' ', address.strip())
 
         # Separar dos o más letras pegadas a números (en ese orden):
         # Sí: 'hola123' -> 'hola 123'
@@ -493,56 +479,36 @@ class AddressParser:
         string e intenta extraer sus componentes, utilizando el proceso
         detallado en el archivo docs/design.md.
 
-        La estructura del valor de retorno del método está definido en la
-        variable ADDRESS_DATA_TEMPLATE. El valor es un diccionario que incluye
-        la dirección de entrada y sus componentes separados, en casos en los
-        que la extracción se pudo completar exitosamente. Por ejemplo:
-
-        Entrada: 'Tucumán 1300 1° A'
-
-        Salida:
-        {
-            "door_number": {
-                "unit": null,
-                "value": "1300"
-            },
-            "floor": "1° A",
-            "street_names": [
-                "Tucumán"
-            ],
-            "type": "simple"
-        }
-
         Args:
             address (str): Dirección sobre la cual realizar la extracción de
                 componentes.
 
         Returns:
-            dict: Componentes de la dirección 'address'.
+            AddressData, NoneType: Si se pudieron extraer las componente
+                con éxito, se retorna una instancia de 'AddressData' con los
+                valores apropiados. En caso contrario se retorna 'None'.
 
         """
-        # Remover espacios al comienzo y al final
-        address = address.strip()
+        # 1) Normalizar
         processed = self._normalize_address(address)
 
-        data = copy.deepcopy(ADDRESS_DATA_TEMPLATE)
-
         if not processed:
-            return data
+            return None
 
+        # 2) Tokenizar
         tokens = self._tokenize_address(processed)
 
+        # 3) Parsear y 4) Desambiguar
         visitor = self._parse_token_types([
             t_type for _, t_type in tokens
         ])
 
-        if visitor:
-            street_names, door_number_value, door_number_unit, floor = \
-                visitor.extract_data(tokens)
-            data['type'] = visitor.address_type
-            data['street_names'] = street_names
-            data['door_number']['value'] = door_number_value
-            data['door_number']['unit'] = door_number_unit
-            data['floor'] = floor
+        if not visitor:
+            return None
 
-        return data
+        # 5) Ensamblar
+        street_names, door_number_value, door_number_unit, floor = \
+            visitor.extract_data(tokens)
+
+        return AddressData(visitor.address_type, street_names,
+                           (door_number_value, door_number_unit), floor)
