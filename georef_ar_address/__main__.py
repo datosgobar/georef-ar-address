@@ -23,8 +23,12 @@ def address_parser_repl():
         if not address:
             break
 
-        data = parser.parse(address).to_dict()
-        print(json.dumps(data, indent=4, ensure_ascii=False, sort_keys=True))
+        data = parser.parse(address)
+        if data:
+            print(json.dumps(data.to_dict(), indent=4, ensure_ascii=False,
+                             sort_keys=True))
+        else:
+            print('Error: dirección inválida.')
 
     print()
 
