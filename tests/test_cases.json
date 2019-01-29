@@ -604,6 +604,39 @@
         ]
     },
     {
+	"address": "pasaje 4",
+	"type": "simple",
+	"door_number": {
+	    "value": null,
+	    "unit": null
+	},
+	"street_names": [
+	    "pasaje 4"
+	]
+    },
+    {
+	"address": "pje. 4",
+	"type": "simple",
+	"door_number": {
+	    "value": null,
+	    "unit": null
+	},
+	"street_names": [
+	    "pje. 4"
+	]
+    },
+    {
+	"address": "pasaje 4 300",
+	"type": "simple",
+	"door_number": {
+	    "value": "300",
+	    "unit": null
+	},
+	"street_names": [
+	    "pasaje 4"
+	]
+    },
+    {
         "address": "99 n 1000",
         "type": "simple",
         "door_number": {

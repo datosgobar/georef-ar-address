@@ -171,5 +171,15 @@
 	    "value": "1000"
 	},
 	"floor": "PISO 1 DEPTO A"
+    },
+    {
+	"address": "pasaje 2 y San Luis",
+	"type": "intersection",
+	"street_names": ["pasaje 2", "San Luis"],
+	"door_number": {
+	    "unit": null,
+	    "value": null
+	},
+	"floor": null
     }
 ]
