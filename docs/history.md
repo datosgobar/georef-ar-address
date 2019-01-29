@@ -1,5 +1,10 @@
 # Historial de versiones para `georef-ar-address`
 
+## **0.0.7** - 2019/01/29
+- Mejora la detección de pisos para incluir valores como "2C", "4A", etc.
+- Agrega "pasaje" como tipo de calle.
+- Arregla excepción lanzada durante el uso interactivo.
+
 ## **0.0.6** - 2019/01/18
 - Mejora la detección de detalles de ubicación al final de direcciones de tipo `simple`.
 - Modifica valor de retorno de `AddressParser.parse()`: ahora se devuelve un objeto de tipo `AddressData` conteniendo las componentes extraídas de la dirección. Para obtener un diccionario de valores a partir del objeto `AddressData`, utilizar su método `to_dict()`.
