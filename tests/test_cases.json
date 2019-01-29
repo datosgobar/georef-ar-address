@@ -337,6 +337,17 @@
         ]
     },
     {
+        "address": "1a junta 2000",
+        "type": "simple",
+        "door_number": {
+            "value": "2000",
+            "unit": null
+        },
+        "street_names": [
+            "1a junta"
+        ]
+    },
+    {
         "address": "1ra junta 2000",
         "type": "simple",
         "door_number": {
@@ -1403,6 +1414,18 @@
     {
         "address": "santa fe 211 PB A",
         "floor": "PB A",
+        "type": "simple",
+        "door_number": {
+            "value": "211",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 211 2C",
+        "floor": "2C",
         "type": "simple",
         "door_number": {
             "value": "211",
