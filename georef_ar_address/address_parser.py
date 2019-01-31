@@ -163,7 +163,7 @@ class TreeVisitor:
 
     """
 
-    __slots__ = ['_tree', '_rank']
+    __slots__ = ['_tree', '_rank', '_components_leaves_indices']
 
     def __init__(self, tree):
         """Inicializa un objeto de tipo TreeVisitor.
@@ -174,15 +174,113 @@ class TreeVisitor:
         """
         self._tree = tree
         self._rank = None
+        self._components_leaves_indices = None
+
+    def _get_components_leaves_indices(self):
+        """Retorna listas de índices de hojas por cada componente de dirección
+        en el árbol '_tree'. Es decir, por cada subarbol de interés de '_tree'
+        (por ejemplo, 'floor'), recorre todas sus hojas, y toma nota de sus
+        índices dentro de el arbol completo.
+
+        Por ejemplo, teniendo el siguiente árbol de parseo (simplificado) para
+        los tokens [(SARMIENTO, WORD), (1400, NUM), (2, NUM), (C, LETTER)], de
+        la dirección "Sarmiento 1400 2 C":
+
+                        address
+                           |
+                         simple
+                           |
+                          /|\
+                         / | \
+           --------------  |  ------------------
+           |               |                   |
+         street     door_number_value        floor
+           |               |                   /\
+           |               |                  /  \
+          WORD            NUM               NUM  LETTER
+
+        Los índices de hojas de cada componentes serían:
+        - street: [0]
+        - door_num_value: [1]
+        - floor: [2, 3]
+
+        La cantidad total de hojas siempre es igual a la cantidad de tokens, ya
+        que un árbol de parseo solo es devuelto si cubre la totalidad de los
+        tokens especificados.
+
+        Los índices luego son utilizados para acceder a la lista de tokens, y
+        tomar los valores de los mismos. En el ejemplo anterior, los índices
+        [2, 3] resultarían en los valores '2' y 'C', el piso de la dirección.
+        Notar que para la componente 'street' se arma (potencialmente) más de
+        una lista, ya que puede haber más de una calle en una dirección.
+
+        Returns:
+            dict: Diccionario con listas de índices de hojas de cada componente
+                de la dirección.
+
+        """
+        # Operar sobre una copia de _tree para no modificar el árbol original
+        # La copia se hace una sola vez y no es costosa
+        tree = self._tree.copy(deep=True)
+
+        for i, tree_pos in enumerate(tree.treepositions('leaves')):
+            # Modificar nuestro árbol _tree para que cada hoja contenga su
+            # propio índice dentro del árbol completo, comenzando desde la
+            # izquierda (anteriormente, cada hoja contenía el tipo de su token
+            # correspondiente en la lista de tokens).
+            tree[tree_pos] = i
+
+        components_leaves_indices = {
+            'street': [],
+            'door_number_value': None,
+            'door_number_unit': None,
+            'floor': None
+        }
+
+        condition = with_labels(components_leaves_indices.keys())
+
+        # Recorrer cada subarbol de interés
+        for subtree in tree.subtrees(condition):
+            label = subtree.label()
+
+            # Tomar la lista de índices de las hojas
+            leaves_indices = subtree.leaves()
+
+            # Almacenar la lista en el diccionario, dependiendo de bajo qué
+            # subarbol estemos
+            if label == 'street':
+                components_leaves_indices['street'].append(leaves_indices)
+            elif label == 'door_number_value':
+                components_leaves_indices['door_number_value'] = leaves_indices
+            elif label == 'door_number_unit':
+                components_leaves_indices['door_number_unit'] = leaves_indices
+            elif label == 'floor':
+                components_leaves_indices['floor'] = leaves_indices
+
+        return components_leaves_indices
+
+    def _select_token_values(self, tokens, indices):
+        """Dada una lista de tokens, selecciona un subconjunto y retorna sus
+        valores concatenados.
+
+        Args:
+            tokens (list): Lista de tokens. Cada token es una tipla de tipo
+                (str, str), donde el primer string es una parte textual de una
+                dirección, y el segundo es un tipo de token.
+            indices (list): Lista de índices de tokens a seleccionar, en el
+                orden especificado.
+
+        Returns:
+            str: Valor de los tokens concatenados con espacios.
+
+        """
+        return ' '.join([tokens[i][0] for i in indices])
 
     def extract_data(self, tokens):
-        """Dada una lista de tokens, utiliza el atributo 'self._tree' para
-        determinar a qué componente de una dirección pertenece cada token.
-
-        Para lograr esto, se recorre el árbol buscando nodos de interés
-        (street, door_number_value, etc.) y por cada subarbol se extraen sus
-        hojas. La secuencia de hojas se concatena para formar el valor final
-        representado por ese subarbol.
+        """Dada una lista de tokens, utiliza el árbol de parseo interno para
+        determinar a qué componente de dirección pertenece cada token. Luego,
+        se retornan las componentes de dirección construidas a partir de esa
+        información y los valores contenidos dentro de los tokens.
 
         Args:
             tokens (list): Lista de tokens. Cada token es una tipla de tipo
@@ -195,50 +293,36 @@ class TreeVisitor:
                 altura (unidad) y el piso, respectivamente.
 
         """
-        tree = self._tree.copy(deep=True)
+        if not self._components_leaves_indices:
+            # Calcular los índices de las hojas de los árboles de componentes
+            # una sola vez y almacenarlos.
+            self._components_leaves_indices = \
+                self._get_components_leaves_indices()
 
-        # El árbol self._tree contiene los *tipos* de los tokens en sus hojas.
-        # Cada token en la lista de tokens tiene una hoja correspondiente en el
-        # árbol, en forma secuencial. Es decir, el token número N corresponde a
-        # la hoja número N del árbol, comenzando desde la izquierda.
-        # Para poder inspeccionar el árbol de forma fácil, se necesita que cada
-        # hoja del árbol contenga el *valor* de su token correspondiente, no su
-        # tipo. Para lograr esto, se crea una copia de self._tree, y por cada
-        # token se reemplaza su hoja correspondiente con el valor del mismo.
-        # Es importante no modificar self._tree ya que potencialmente podría
-        # ser utilizado para extraer información de otra lista de tokens.
-        for i, tree_pos in enumerate(tree.treepositions('leaves')):
-            tree[tree_pos] = tokens[i][0]
+        # Utilizar _components_leaves_indices para seleccionar los tokens
+        # indicados y construir los valores de las componentes de la dirección.
+        street_names = [
+            self._select_token_values(tokens, indices)
+            for indices in self._components_leaves_indices['street']
+        ]
 
-        street_names = []
-        door_number_value = None
-        door_number_unit = None
+        door_num_value = None
+        door_num_unit = None
         floor = None
-        condition = with_labels([
-            'street',
-            'door_number_value',
-            'door_number_unit',
-            'floor'
-        ])
 
-        # Recorrer cada subarbol de interés
-        for subtree in tree.subtrees(condition):
-            label = subtree.label()
+        if self._components_leaves_indices['door_number_value']:
+            door_num_value = self._select_token_values(
+                tokens, self._components_leaves_indices['door_number_value'])
 
-            # Concatenar las hojas del subarbol, construyendo así el texto que
-            # yace 'debajo' del subarbol.
-            subtree_text = ' '.join(subtree.leaves())
+        if self._components_leaves_indices['door_number_unit']:
+            door_num_unit = self._select_token_values(
+                tokens, self._components_leaves_indices['door_number_unit'])
 
-            if label == 'street':
-                street_names.append(subtree_text)
-            elif label == 'door_number_value':
-                door_number_value = subtree_text
-            elif label == 'door_number_unit':
-                door_number_unit = subtree_text
-            elif label == 'floor':
-                floor = subtree_text
+        if self._components_leaves_indices['floor']:
+            floor = self._select_token_values(
+                tokens, self._components_leaves_indices['floor'])
 
-        return street_names, door_number_value, door_number_unit, floor
+        return street_names, door_num_value, door_num_unit, floor
 
     def _get_rank(self):
         """Calcula el rango (puntaje) de 'self._tree'. El rango es utilizado

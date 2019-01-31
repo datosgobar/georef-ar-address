@@ -11,8 +11,11 @@ coverage:
 	coverage report
 
 code_checks:
-	flake8 georef_ar_address/*.py tests/*.py
-	pylint georef_ar_address/*.py tests/*.py
+	flake8 georef_ar_address/*.py tests/*.py tools/*.py
+	pylint georef_ar_address/*.py tests/*.py tools/*.py
+
+benchmark:
+	PYTHONPATH=$$(pwd) python tools/benchmark.py
 
 package:
 	mkdir -p dist
