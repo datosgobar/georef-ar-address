@@ -219,12 +219,13 @@ class TreeVisitor:
                 de la dirección.
 
         """
-        # Operar sobre una copia de _tree para no modificar el árbol original
-        # La copia se hace una sola vez y no es costosa
+        # Operar sobre una copia de _tree para no modificar el árbol original.
+        # La copia se hace una sola vez y no es costosa en comparación a las
+        # otras partes del proceso de parseo.
         tree = self._tree.copy(deep=True)
 
         for i, tree_pos in enumerate(tree.treepositions('leaves')):
-            # Modificar nuestro árbol _tree para que cada hoja contenga su
+            # Modificar nuestro árbol 'tree' para que cada hoja contenga su
             # propio índice dentro del árbol completo, comenzando desde la
             # izquierda (anteriormente, cada hoja contenía el tipo de su token
             # correspondiente en la lista de tokens).
