@@ -1,5 +1,9 @@
 # Historial de versiones para `georef-ar-address`
 
+## **0.0.8** - 2019/04/09
+- Mejora la detección de pisos para incluir valores como "12C", "11A", etc. (dos dígitos).
+- Mejora la performance de `AddressParser.parse()` cuando se utiliza cache.
+
 ## **0.0.7** - 2019/01/29
 - Mejora la detección de pisos para incluir valores como "2C", "4A", etc.
 - Agrega "pasaje" como tipo de calle.
