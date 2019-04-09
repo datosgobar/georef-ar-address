@@ -1436,6 +1436,42 @@
         ]
     },
     {
+        "address": "santa fe 211 piso 2C",
+        "floor": "piso 2C",
+        "type": "simple",
+        "door_number": {
+            "value": "211",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 211 11C",
+        "floor": "11C",
+        "type": "simple",
+        "door_number": {
+            "value": "211",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
+        "address": "santa fe 211 piso 11C",
+        "floor": "piso 11C",
+        "type": "simple",
+        "door_number": {
+            "value": "211",
+            "unit": null
+        },
+        "street_names": [
+            "santa fe"
+        ]
+    },
+    {
         "address": "ruta 8 km 123",
         "type": "simple",
         "door_number": {

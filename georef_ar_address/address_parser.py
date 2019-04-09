@@ -73,7 +73,7 @@ _TOKEN_TYPES = [
     ('NUM', r'\d+((\s|$)|[°º])'),
     ('N', r'n\s'),
     ('LETTER', r'[^\d\W](\s|$|\.)'),
-    ('NUM_LETTER', r'[\d][^\d\W](\s|$)'),
+    ('NUMS_LETTER', r'[\d]+[^\d\W](\s|$)'),
     ('WORD', r'[^\s]+'),
     ('WS', r'\s')
 ]
