@@ -6,8 +6,7 @@ test:
 	LOG_LEVEL=DEBUG python -m unittest
 
 coverage:
-	coverage run --source=georef_ar_address --omit=georef_ar_address/__main__.py \
-		-m tests.test_georef_ar_address
+	coverage run --source=georef_ar_address --omit=georef_ar_address/__main__.py -m unittest
 	coverage report
 
 code_checks:
