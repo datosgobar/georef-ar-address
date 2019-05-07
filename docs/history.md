@@ -1,5 +1,8 @@
 # Historial de versiones para `georef-ar-address`
 
+## **0.0.9** - 2019/05/07
+- Corrige la detección de nombres de calles cuando la calle se llama "calle s n" o contiene "s n".
+
 ## **0.0.8** - 2019/04/09
 - Mejora la detección de pisos para incluir valores como "12C", "11A", etc. (dos dígitos).
 - Mejora la performance de `AddressParser.parse()` cuando se utiliza cache.
