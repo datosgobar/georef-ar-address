@@ -14,9 +14,9 @@ import os
 import nltk
 from .address_data import AddressData
 
-GRAMMARS_DIR = os.path.join(os.path.dirname(__file__), 'grammars')
-GRAMMAR_PATH = os.path.join(GRAMMARS_DIR, 'address-ar.cfg')
-START_PRODUCTION = 'address'
+_GRAMMARS_DIR = os.path.join(os.path.dirname(__file__), 'grammars')
+_GRAMMAR_PATH = os.path.join(_GRAMMARS_DIR, 'address-ar.cfg')
+_START_PRODUCTION = 'address'
 
 _SEPARATION_REGEXP = r'([^\W\d]{2,}\.?)(\d)'
 """str: Expresión regular utilizada en la etapa de normalización para separar
@@ -91,7 +91,7 @@ class InvalidGrammarException(Exception):
     pass
 
 
-def with_labels(labels):
+def _with_labels(labels):
     """Crea un predicado para nltk.Tree que devuelve True si su etiqueta está
     dentro de un conjunto de valores.
 
@@ -106,7 +106,7 @@ def with_labels(labels):
     return lambda t: t.label() in set(labels)
 
 
-def load_grammar(grammar_path):
+def _load_grammar(grammar_path):
     """Lee una gramática libre de contexto almacenada en un archivo .cfg y
     la retorna luego de realizar algunas validaciones.
 
@@ -123,9 +123,9 @@ def load_grammar(grammar_path):
     """
     grammar = nltk.data.load('file:{}'.format(grammar_path))
 
-    if grammar.start().symbol() != START_PRODUCTION:
+    if grammar.start().symbol() != _START_PRODUCTION:
         raise InvalidGrammarException('Start rule must be "{}"'.format(
-            START_PRODUCTION))
+            _START_PRODUCTION))
 
     if not grammar.is_nonempty():
         raise InvalidGrammarException('Empty productions are not allowed')
@@ -238,7 +238,7 @@ class TreeVisitor:
             'floor': None
         }
 
-        condition = with_labels(components_leaves_indices.keys())
+        condition = _with_labels(components_leaves_indices.keys())
 
         # Recorrer cada subarbol de interés
         for subtree in tree.subtrees(condition):
@@ -345,7 +345,7 @@ class TreeVisitor:
         has_door_number = False
         unnamed_streets = 0
 
-        condition = with_labels(['street_no_num', 'street_with_num'])
+        condition = _with_labels(['street_no_num', 'street_with_num'])
 
         # Recorrer cada subarbol de interés
         for subtree in self._tree.subtrees(condition):
@@ -419,7 +419,7 @@ class AddressParser:
             cache (dict): Ver atributo 'self._cache'.
 
         """
-        self._parser = nltk.EarleyChartParser(load_grammar(GRAMMAR_PATH))
+        self._parser = nltk.EarleyChartParser(_load_grammar(_GRAMMAR_PATH))
 
         self._token_regexp = re.compile(
             '|'.join('(?P<{}>{})'.format(*tt) for tt in _TOKEN_TYPES),
