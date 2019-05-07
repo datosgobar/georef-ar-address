@@ -61,7 +61,7 @@ _TOKEN_TYPES = [
     ('KM', r'kil[oó]metro|km\.?'),
     ('MISSING_NAME', r's/nombre'),
     ('MISSING_NUM', r'(sin\s|s/)(n[uú]mero|n(ro\.?|[°º]))'),
-    ('S_N', r's[/-]n|sn(\s|$)'),
+    ('S_N', r's[/-]n|s\s?n(\s|$)'),
     ('STREET_TYPE_S', r'(avda|av|bv|diag|pje)[\s.]'),
     ('STREET_TYPE_L', r'calle\s|avenida|bo?ulevard?|diagonal|pasaje'),
     ('ROUTE', r'ruta|(rta|rn|rp)[\s.]'),

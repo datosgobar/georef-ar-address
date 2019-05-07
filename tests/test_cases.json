@@ -242,6 +242,17 @@
         ]
     },
     {
+        "address": "calle s n",
+        "type": "simple",
+        "door_number": {
+            "value": null,
+            "unit": null
+        },
+        "street_names": [
+            "calle s n"
+        ]
+    },
+    {
         "address": "bv. s/nombre",
         "type": "simple",
         "door_number": {
@@ -733,6 +744,28 @@
         },
         "street_names": [
             "belgrano avenida"
+        ]
+    },
+    {
+        "address": "calle s n 1000",
+        "type": "simple",
+        "door_number": {
+            "value": "1000",
+            "unit": null
+        },
+        "street_names": [
+            "calle s n"
+        ]
+    },
+    {
+        "address": "calle s n s n",
+        "type": "simple",
+        "door_number": {
+            "value": "s n",
+            "unit": null
+        },
+        "street_names": [
+            "calle s n"
         ]
     },
     {
