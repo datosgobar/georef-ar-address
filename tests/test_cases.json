@@ -13,6 +13,7 @@
     {
         "address": "juan E Gómez",
         "type": "simple",
+	"_comment": "La letra 'e' se utiliza como 'y', pero solo en algunos contextos (no en el de este test).",
         "door_number": {
             "value": null,
             "unit": null
@@ -35,6 +36,7 @@
     {
         "address": "entre ríos",
         "type": "simple",
+	"_comment": "Aunque 'entre' se utiliza para separar calles, también puede formar parte del nombre de las mismas.",
         "door_number": {
             "value": null,
             "unit": null
@@ -46,6 +48,7 @@
     {
         "address": "adolfo calle",
         "type": "simple",
+	"_comment": "Existen varias calles llamadas 'Adolfo Calle'.",
         "door_number": {
             "value": null,
             "unit": null
@@ -288,6 +291,7 @@
     {
         "address": "septiembre de 1999",
         "type": "simple",
+	"_comment": "Aunque el nombre de la calle tiene un número al final, no debe ser interpretado como altura.",
         "street_names": [
             "septiembre de 1999"
         ]
@@ -295,6 +299,7 @@
     {
         "address": "vicente lopez y planes 2000",
         "type": "simple",
+	"_comment": "Calle con 'y' en su nombre (no intersección).",
         "door_number": {
             "value": "2000",
             "unit": null
@@ -405,6 +410,7 @@
     {
         "address": "leandro n alem 1000",
         "type": "simple",
+	"_comment": "La letra 'n' no siempre indica una altura, puede ser una inicial.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -510,6 +516,7 @@
         "address": "calle 99 1000 2 A Localidad Desaguadero",
         "floor": "2 A",
         "type": "simple",
+	"_comment": "Se debería poder ignorar datos de localidad al final de la dirección, si no son muy complejos.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -672,6 +679,7 @@
     {
         "address": "99 1000",
         "type": "simple",
+	"_comment": "Calle y altura ambos puramente numéricos.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -694,6 +702,7 @@
     {
         "address": "calle s/n s/n",
         "type": "simple",
+	"_comment": "'s/n' cambia de significado dependiendo de su ubicación (sin nombre, sin número).",
         "door_number": {
             "value": "s/n",
             "unit": null
@@ -749,6 +758,7 @@
     {
         "address": "calle s n 1000",
         "type": "simple",
+	"_comment": "No interpretar la 'n' de 's n' como parte de la altura.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -870,6 +880,7 @@
     {
         "address": "sÃnta fe* 1000",
         "type": "simple",
+	"_comment": "Los nombres de las calles pueden contener casi cualquier caracter.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -914,6 +925,7 @@
     {
         "address": "santa fe 1000 (N)",
         "type": "simple",
+	"_comment": "Se deberían remover indicadores de orientación norte/sur/etc.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -947,6 +959,7 @@
     {
         "address": "santa fe1000",
         "type": "simple",
+	"_comment": "Cuando tiene sentiddo, se deberían separar letras de números.",
         "door_number": {
             "value": "1000",
             "unit": null
@@ -1343,6 +1356,7 @@
     {
         "address": "santa fe 1000/1001",
         "type": "simple",
+	"_comment": "Algunas direcciones tienen más de una altura.",
         "door_number": {
             "value": "1000/1001",
             "unit": null
@@ -1672,6 +1686,7 @@
     {
         "address": "colectora oeste ruta 11 km 10",
         "type": "simple",
+	"_comment": "El tipo de calle (calle/ruta/etc.) no siempre está al comienzo de la dirección.",
         "door_number": {
             "value": "10",
             "unit": "km"
@@ -1808,6 +1823,7 @@
     {
         "address": "cordoba e independencia",
         "type": "intersection",
+	"_comment": "Se utiliza 'e' para separar palabras, antes de 'i'.",
         "door_number": {
             "value": null,
             "unit": null
@@ -1820,6 +1836,7 @@
     {
         "address": "cordoba e hipolito yrigoyen",
         "type": "intersection",
+	"_comment": "Se utiliza 'e' para separar palabras, antes de 'h'.",
         "door_number": {
             "value": null,
             "unit": null
@@ -1832,6 +1849,7 @@
     {
         "address": "cordoba e yrigoyen",
         "type": "intersection",
+	"_comment": "Se utiliza 'e' para separar palabras, antes de 'y'.",
         "door_number": {
             "value": null,
             "unit": null
@@ -2229,6 +2247,7 @@
         "address": "entre rios s/n 2 E e independencia",
         "floor": "2 E",
         "type": "intersection",
+	"_comment": "No confundir parte del piso con 'e' de separador.",
         "door_number": {
             "value": "s/n",
             "unit": null

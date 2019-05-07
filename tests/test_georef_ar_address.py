@@ -64,6 +64,9 @@ class AddressParserTest(unittest.TestCase):
         with open(filename) as f:
             cls._test_cases = json.load(f)
 
+        for test_case in cls._test_cases:
+            test_case.pop('_comment', None)
+
         assert all(
             test_case['type'] in ADDRESS_TYPES or test_case['type'] is None
             for test_case in cls._test_cases
@@ -190,7 +193,3 @@ class DoorNumberValueTest(unittest.TestCase):
         'normalized_door_number_value()'."""
         data = self.parser.parse('Leandro Alem S/N')
         self.assertIsNone(data.normalized_door_number_value())
-
-
-if __name__ == '__main__':
-    unittest.main()
