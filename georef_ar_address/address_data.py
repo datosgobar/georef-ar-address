@@ -117,6 +117,28 @@ class AddressData:
         match = re.search(r'\d+', self._door_number_value)
         return int(match.group(0)) if match else None
 
+    def normalized_door_number_unit(self):
+        """Retorna la unidad de la altura de la dirección. Por el momento, las
+        unidades disponibles son:
+
+        - None: Altura sin unidad. Esto corresponde a alturas normales (número
+            de calle). Asociado a direcciones que utilizan "N", "N°", "Nro.",
+            etc.
+        - 'km': Kilómetros.
+
+        Returns:
+            None, str: Unidad normalizada de la altura.
+
+        """
+        if not self._door_number_unit:
+            return None
+
+        if re.search(r'km|kil(o|ó)metro', self._door_number_unit,
+                     re.IGNORECASE):
+            return 'km'
+
+        return None
+
     @property
     def type(self):
         """Getter para el atributo '_type'.

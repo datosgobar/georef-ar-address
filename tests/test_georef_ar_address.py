@@ -193,3 +193,26 @@ class DoorNumberValueTest(unittest.TestCase):
         'normalized_door_number_value()'."""
         data = self.parser.parse('Leandro Alem S/N')
         self.assertIsNone(data.normalized_door_number_value())
+
+
+class DoorNumberUnitTest(unittest.TestCase):
+    def setUp(self):
+        self.parser = AddressParser()
+
+    def test_int_door_number_unit_none(self):
+        """Una dirección con altura sin prefijo debería devolver None en
+        'normalized_door_number_unit()'."""
+        data = self.parser.parse('Callao 1231')
+        self.assertIsNone(data.normalized_door_number_unit())
+
+    def test_int_door_number_unit_none_n(self):
+        """Una dirección con altura sin prefijo 'N' debería devolver None en
+        'normalized_door_number_unit()'."""
+        data = self.parser.parse('Callao N 1231')
+        self.assertIsNone(data.normalized_door_number_unit())
+
+    def test_int_door_number_unit_km(self):
+        """Una dirección con altura sin prefijo 'KM.' debería devolver 'km' en
+        'normalized_door_number_unit()'."""
+        data = self.parser.parse('Ruta 33 KM. 33')
+        self.assertEqual(data.normalized_door_number_unit(), 'km')
