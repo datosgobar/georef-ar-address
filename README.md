@@ -115,4 +115,4 @@ Para leer sobre las desiciones de diseño y funcionamiento de `georef-ar-address
 Para consultar el historial de versiones de `georef-ar-address`, ver el archivo [**history.md**](docs/history.md).
 
 ## Soporte
-En caso de que encuentres algún bug, tengas problemas con la instalación, o tengas comentarios de alguna parte de `georef-ar-address`, podés mandarnos un mail a [datos@modernizacion.gob.ar](mailto:datos@modernizacion.gob.ar) o [crear un issue](https://github.com/datosgobar/georef-ar-address/issues/new?title=Encontre-un-bug-en-georef-ar-address).
+En caso de que encuentres algún bug, tengas problemas con la instalación, o tengas comentarios de alguna parte de `georef-ar-address`, podés mandarnos un mail a [datosargentina@jefatura.gob.ar](mailto:datosargentina@jefatura.gob.ar) o [crear un issue](https://github.com/datosgobar/georef-ar-address/issues/new?title=Encontre-un-bug-en-georef-ar-address).

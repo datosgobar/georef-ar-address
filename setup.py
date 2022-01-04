@@ -17,7 +17,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Datos Argentina',
-    author_email='datos@modernizacion.gob.ar',
+    author_email='datosargentina@jefatura.gob.ar',
     install_requires=requires,
     include_package_data=True,
     package_data={'georef_ar_address': ['grammars/*.cfg']},
