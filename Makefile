@@ -19,7 +19,7 @@ benchmark:
 package:
 	mkdir -p dist
 	rm -rf dist/*
-	python setup.py sdist
+	python -m build
 
 upload: package
 	twine upload dist/*

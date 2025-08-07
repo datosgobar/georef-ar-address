@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "georef-ar-address"
+version = "0.0.10"
+description = "Librería escrita en Python para la identificación de componentes de direcciones argentinas"
+readme = "README.md"
+requires-python = ">=3"
+license = { text = "MIT" }
+
+authors = [
+  { name = "Datos Argentina", email = "datosargentina@jefatura.gob.ar" }
+]
+
+keywords = ["georef", "datos", "argentina", "direccion", "calle", "altura", "json", "nltk"]
+
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Text Processing",
+  "Topic :: Software Development :: Libraries"
+]
+
+dependencies = [
+  "nltk==3.5"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pylint==2.3.1",
+  "flake8==3.6.0",
+  "twine==1.12.1",
+  "coverage==4.5.2",
+  "coveralls==1.5.1"
+]
+
+[project.urls]
+Homepage = "https://github.com/datosgobar/georef-ar-address"
+Download = "https://github.com/datosgobar/georef-ar-address/archive/0.0.10.tar.gz"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+georef_ar_address = ["grammars/*.cfg"]
