@@ -569,27 +569,39 @@ class AddressParser:
         return self._tokens_parse_tree(token_types)
 
     def _generate_alternative_names(self,street_names):
+        street_type = None
         alternative_names = []
         for street_name in street_names:
+            street_name = street_name.lower()
+            street_t = self.contested_grammars['street_type_present']
+            if street_t.get('stat') and street_t.get('values'):
+                for val in street_t['values']:
+                    val_str = str(val)
+                    street_type = val_str
+                    if val_str in street_name:
+                        alt_name = street_name.replace(val_str, '').strip()
+                        alternative_names.append(alt_name)
             dubious = self.contested_grammars['dubious_text']
             if dubious.get('stat') and dubious.get('values'):
                 for val in dubious['values']:
                     val_str = str(val)
                     if val_str in street_name:
                         alt_name = street_name.split(val_str)[0] + val_str
-                        alternative_names.append(alt_name)
-            names = self.contested_grammars['contested_names']
+                        if street_type:
+                            other_alt_name = alt_name.replace(street_type, '').strip()
+                            alternative_names.extend([alt_name, other_alt_name])
+                        else:
+                            alternative_names.append(alt_name)
+            names = self.contested_grammars['contested_name']
             if names.get('stat') and names.get('values'):
                 for val in names['values']:
                     alt_names = list(contested_names.get(val))
-                    alternative_names.append(alt_names)
-            street_t = self.contested_grammars['street_type_present']
-            if street_t.get('stat') and street_t.get('values'):
-                for val in street_t['values']:
-                    val_str = str(val)
-                    if val_str in street_name:
-                        alt_name = street_name.replace(val_str, '').strip()
-                        alternative_names.append(alt_name)
+                    if street_type:
+                        other_alt_names = [street_type + element for element in alt_names]
+                        alternative_names.extend([alt_names,other_alt_names])
+                    else:
+                        alternative_names.append(alt_names)
+
         return alternative_names
 
 
@@ -599,7 +611,7 @@ class AddressParser:
         contested_grammars={
             "street_type_present" : {"stat":False,
                                      "values":[]},
-            "contested_names": {"stat":False,
+            "contested_name": {"stat":False,
                                      "values":[]},
             "dubious_text":{"stat":False,
                                      "values":[]}
