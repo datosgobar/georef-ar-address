@@ -13,9 +13,11 @@ import re
 import os
 import nltk
 from .address_data import AddressData
+import yaml
 
 _GRAMMARS_DIR = os.path.join(os.path.dirname(__file__), 'grammars')
 _GRAMMAR_PATH = os.path.join(_GRAMMARS_DIR, 'address-ar.cfg')
+_CONTESTED_NAMES_PATH = os.path.join(_GRAMMARS_DIR, 'contested_names.yml')
 _START_PRODUCTION = 'address'
 
 _SEPARATION_REGEXP = r'([^\W\d]{2,}\.?)(\d)'
@@ -80,6 +82,9 @@ _TOKEN_TYPES = [
 """list: Expresiones regulares utilizadas para crear cada tipo de token en la
 etapa de tokenización.
 """
+with open(_CONTESTED_NAMES_PATH, "r", encoding="utf-8") as f:
+    contested_names = yaml.safe_load(f)
+
 
 
 class InvalidGrammarException(Exception):
@@ -235,7 +240,8 @@ class TreeVisitor:
             'street': [],
             'door_number_value': None,
             'door_number_unit': None,
-            'floor': None
+            'floor': None,
+
         }
 
         condition = _with_labels(components_leaves_indices.keys())
@@ -257,6 +263,7 @@ class TreeVisitor:
                 components_leaves_indices['door_number_unit'] = leaves_indices
             elif label == 'floor':
                 components_leaves_indices['floor'] = leaves_indices
+
 
         return components_leaves_indices
 
@@ -419,6 +426,7 @@ class AddressParser:
             cache (dict): Ver atributo 'self._cache'.
 
         """
+        self.contested_grammars = {}
         self._parser = nltk.EarleyChartParser(_load_grammar(_GRAMMAR_PATH))
 
         self._token_regexp = re.compile(
@@ -560,6 +568,64 @@ class AddressParser:
 
         return self._tokens_parse_tree(token_types)
 
+    def _generate_alternative_names(self,street_names):
+        alternative_names = []
+        for street_name in street_names:
+            dubious = self.contested_grammars['dubious_text']
+            if dubious.get('stat') and dubious.get('values'):
+                for val in dubious['values']:
+                    val_str = str(val)
+                    if val_str in street_name:
+                        alt_name = street_name.split(val_str)[0] + val_str
+                        alternative_names.append(alt_name)
+            names = self.contested_grammars['contested_names']
+            if names.get('stat') and names.get('values'):
+                for val in names['values']:
+                    alt_names = list(contested_names.get(val))
+                    alternative_names.append(alt_names)
+            street_t = self.contested_grammars['street_type_present']
+            if street_t.get('stat') and street_t.get('values'):
+                for val in street_t['values']:
+                    val_str = str(val)
+                    if val_str in street_name:
+                        alt_name = street_name.replace(val_str, '').strip()
+                        alternative_names.append(alt_name)
+        return alternative_names
+
+
+
+
+    def _search_contested_grammars(self, tokens):
+        contested_grammars={
+            "street_type_present" : {"stat":False,
+                                     "values":[]},
+            "contested_names": {"stat":False,
+                                     "values":[]},
+            "dubious_text":{"stat":False,
+                                     "values":[]}
+        }
+        values, tags = zip(*tokens)
+        values = [v.lower() for v in values]
+        tags = list(tags)
+        for i in range(len(tags) - 2):
+            if tags[i:i + 3] == ['WORD', 'NUM', 'WORD']:
+                contested_grammars['dubious_text']['stat'] = True
+                contested_grammars['dubious_text']['values'].append(values[i + 1])
+        if any(v in contested_names for v in values):
+            contested_grammars['contested_name']['stat'] = True
+            contested_grammars['contested_name']['values'] = [
+                v for v in values if v in contested_names
+            ]
+        if any(t in ('STREET_TYPE_S', 'STREET_TYPE_L') for t in tags):
+            contested_grammars['street_type_present']['stat'] = True
+            contested_grammars['street_type_present']['values'] = [
+                v for v, t in zip(values, tags) if t in ('STREET_TYPE_S', 'STREET_TYPE_L')
+            ]
+        return contested_grammars
+
+
+
+
     def parse(self, address):
         """Punto de entrada de la clase AddressParser. Toma una dirección como
         string e intenta extraer sus componentes, utilizando el proceso
@@ -583,6 +649,7 @@ class AddressParser:
 
         # 2) Tokenizar
         tokens = self._tokenize_address(processed)
+        self.contested_grammars = self._search_contested_grammars(tokens)
 
         # 3) Parsear y 4) Desambiguar
         visitor = self._parse_token_types([
@@ -595,6 +662,14 @@ class AddressParser:
         # 5) Ensamblar
         street_names, door_number_value, door_number_unit, floor = \
             visitor.extract_data(tokens)
+        alternative_names = []
+        if visitor.address_type == 'simple':
+            alternative_names = self._generate_alternative_names(street_names)
 
-        return AddressData(visitor.address_type, street_names,
-                           (door_number_value, door_number_unit), floor)
+        return AddressData(
+            visitor.address_type,
+            street_names,
+            (door_number_value, door_number_unit),
+            floor,
+            alternative_names
+        )

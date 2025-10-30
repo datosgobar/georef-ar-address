@@ -29,11 +29,12 @@ class AddressData:
         '_street_names',
         '_door_number_value',
         '_door_number_unit',
-        '_floor'
+        '_floor',
+        '_alternative_names'
     ]
 
     def __init__(self, address_type, street_names=None, door_number=None,
-                 floor=None):
+                 floor=None, alternative_names = None):
         """Inicializa un objeto de tipo 'AddressData'.
 
         Args:
@@ -56,6 +57,7 @@ class AddressData:
         self._door_number_value = door_number[0] if door_number else None
         self._door_number_unit = door_number[1] if door_number else None
         self._floor = floor
+        self._alternative_names = alternative_names
 
     def to_dict(self):
         """Devuelve una representación del objeto en forma de diccionario. Útil
@@ -88,7 +90,8 @@ class AddressData:
                 'value': self._door_number_value,
                 'unit': self._door_number_unit
             },
-            'floor': self._floor
+            'floor': self._floor,
+            'alternative_names':self._alternative_names
         }
 
     def normalized_door_number_value(self):
