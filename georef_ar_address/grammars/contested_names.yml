@@ -4,4 +4,131 @@ peron:
   - "peron"
   - "tte gral juan d peron"
   - "tte gral juan domingo peron"
-  - "tte gral"
+
+
+belgrano:
+  - "dr manuel belgrano"
+  - "manuel belgrano"
+  - "gral manuel belgrano"
+  - "gral belgrano"
+  - "dr belgrano"
+  - "dr m belgrano"
+  - "gral m belgrano"
+  - "m belgrano"
+
+
+sarmiento:
+  - "domingo f sarmiento"
+  - "domingo faustino sarmiento"
+  - "sarmiento"
+  - "dr domingo f sarmiento"
+  - "dr domingo faustino sarmiento"
+  - "dr sarmiento"
+  - "d f sarmiento"
+  - "d faustino sarmiento"
+  - "gral sarmiento"
+  - "gral domingo f sarmiento"
+  - "gral domingo faustino sarmiento"
+  - "cap sarmiento"
+  - "cap domingo f sarmiento"
+  - "cap domingo faustino sarmiento"
+  - "capitan sarmiento"
+
+
+
+rivadavia:
+  - "bernardino rivadavia"
+  - "pres rivadavia"
+  - "pres bernardino rivadavia"
+  - "rivadavia"
+  - "b rivadavia"
+
+
+moreno:
+  - "mariano moreno"
+  - "dr mariano moreno"
+  - "dr moreno"
+  - "moreno"
+  - "m moreno"
+  - "dr m moreno"
+
+
+mitre:
+  - "bartolome mitre"
+  - "gral bartolome mitre"
+  - "gral mitre"
+  - "mitre"
+  - "b mitre"
+
+
+alberdi:
+  - "juan b alberdi"
+  - "juan bautista alberdi"
+  - "dr juan b alberdi"
+  - "dr juan bautista alberdi"
+  - "dr alberdi"
+  - "alberdi"
+
+
+
+urquiza:
+  - "gral urquiza"
+  - "gral justo j urquiza"
+  - "gral justo jose de urquiza"
+  - "justo j urquiza"
+  - "justo jose de urquiza"
+  - "urquiza"
+
+
+alem:
+  - "leandro n alem"
+  - "leandro nicéforo alem"
+  - "dr leandro n alem"
+  - "dr alem"
+  - "alem"
+  - "l n alem"
+
+
+lavalle:
+  - "gral lavalle"
+  - "gral juan lavalle"
+  - "juan lavalle"
+  - "lavalle"
+  - "j lavalle"
+
+
+irigoyen:
+  - "bernardo de irigoyen"
+  - "b irigoyen"
+  - "irigoyen"
+
+
+yrigoyen:
+  - "hipolito yrigoyen"
+  - "pres hipolito yrigoyen"
+  - "pres h yrigoyen"
+  - "yrigoyen"
+  - "h yrigoyen"
+
+
+avellaneda:
+  - "nicolas avellaneda"
+  - "pres nicolas avellaneda"
+  - "pres avellaneda"
+  - "avellaneda"
+  - "n avellaneda"
+
+brown:
+  - "alm brown"
+  - "almirante brown"
+  - "guillermo brown"
+  - "alm guillermo brown"
+  - "brown"
+  - "g brown"
+
+pellegrini:
+  - "carlos pellegrini"
+  - "pres carlos pellegrini"
+  - "pres pellegrini"
+  - "c pellegrini"
+  - "pellegrini"
