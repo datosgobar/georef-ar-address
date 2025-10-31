@@ -589,7 +589,8 @@ class AddressParser:
                         alt_name = street_name.split(val_str)[0] + val_str
                         if street_type:
                             other_alt_name = alt_name.replace(street_type, '').strip()
-                            alternative_names.extend([alt_name, other_alt_name])
+                            alternative_names.append(alt_name)
+                            alternative_names.append(other_alt_name)
                         else:
                             alternative_names.append(alt_name)
             names = self.contested_grammars['contested_name']
@@ -598,9 +599,10 @@ class AddressParser:
                     alt_names = list(contested_names.get(val))
                     if street_type:
                         other_alt_names = [street_type + element for element in alt_names]
-                        alternative_names.extend([alt_names,other_alt_names])
+                        alternative_names.extend(alt_names)
+                        alternative_names.extend(other_alt_names)
                     else:
-                        alternative_names.append(alt_names)
+                        alternative_names.extend(alt_names)
 
         return alternative_names
 
