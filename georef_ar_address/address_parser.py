@@ -596,13 +596,17 @@ class AddressParser:
             names = self.contested_grammars['contested_name']
             if names.get('stat') and names.get('values'):
                 for val in names['values']:
-                    alt_names = list(contested_names.get(val))
+                    contested_vals = names.get(val, [])
+                    if not isinstance(contested_vals, list):
+                        contested_vals = [contested_vals]
+                    for alt_name in contested_vals:
+                        if alt_name not in alternative_names:
+                            alternative_names.append(str(alt_name))
                     if street_type:
-                        other_alt_names = [street_type + element for element in alt_names]
-                        alternative_names.extend(alt_names)
-                        alternative_names.extend(other_alt_names)
-                    else:
-                        alternative_names.extend(alt_names)
+                        for alt_name in contested_vals:
+                            combined_name = f"{street_type}{alt_name}"
+                            if combined_name not in alternative_names:
+                                alternative_names.append(combined_name)
 
         return alternative_names
 
