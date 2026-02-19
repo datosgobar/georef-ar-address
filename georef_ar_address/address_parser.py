@@ -83,7 +83,7 @@ _TOKEN_TYPES = [
 etapa de tokenización.
 """
 with open(_CONTESTED_NAMES_PATH, "r", encoding="utf-8") as f:
-    contested_names = yaml.safe_load(f)
+    distinguished_names = yaml.safe_load(f)
 
 
 
@@ -570,75 +570,62 @@ class AddressParser:
 
     def _generate_alternative_names(self,street_names):
         street_type = None
+        all_street_names = []
         alternative_names = []
+        altnames_wout_str = []
+        altnames_w_str = []
         for street_name in street_names:
             street_name = street_name.lower()
             street_t = self.contested_grammars['street_type_present']
-            if street_t.get('stat') and street_t.get('values'):
-                for val in street_t['values']:
-                    val_str = str(val)
-                    street_type = val_str
-                    if val_str in street_name:
-                        alt_name = street_name.replace(val_str, '').strip()
-                        alternative_names.append(alt_name)
             dubious = self.contested_grammars['dubious_text']
-            if dubious.get('stat') and dubious.get('values'):
-                for val in dubious['values']:
-                    val_str = str(val)
-                    if val_str in street_name:
-                        alt_name = street_name.split(val_str)[0] + val_str
-                        if street_type:
-                            other_alt_name = alt_name.replace(street_type, '').strip()
-                            alternative_names.append(alt_name)
-                            alternative_names.append(other_alt_name)
-                        else:
-                            alternative_names.append(alt_name)
-            names = self.contested_grammars['contested_name']
-            if names.get('stat') and names.get('values'):
-                for val in names['values']:
-                    contested_vals = names.get(val, [])
-                    if not isinstance(contested_vals, list):
-                        contested_vals = [contested_vals]
-                    for alt_name in contested_vals:
-                        if alt_name not in alternative_names:
-                            alternative_names.append(str(alt_name))
-                    if street_type:
-                        for alt_name in contested_vals:
-                            combined_name = f"{street_type}{alt_name}"
-                            if combined_name not in alternative_names:
-                                alternative_names.append(combined_name)
-
-        return alternative_names
+            if dubious != None:
+                alternative_names.append(dubious)
+            name = self.contested_grammars['contested_name']
+            if name!= None:
+                contested_vals = distinguished_names.get(name, [])
+                alternative_names.extend(contested_vals)
+        if street_t != None:
+            altnames_wout_str = [element.replace(street_type, '').strip() for element in alternative_names]
+            altnames_w_str = [element if street_type in element else f"{street_type} {element}" for element in
+                              alternative_names]
+            all_street_names = altnames_w_str + altnames_wout_str
 
 
-
+        return all_street_names
 
     def _search_contested_grammars(self, tokens):
-        contested_grammars={
-            "street_type_present" : {"stat":False,
-                                     "values":[]},
-            "contested_name": {"stat":False,
-                                     "values":[]},
-            "dubious_text":{"stat":False,
-                                     "values":[]}
+        """Esta función devuelve un diccionario identificando 4 posibles situaciones problemáticas:
+        -situacion 1: el nombre de calle incluye tipo de calle
+         -situación 2: el nombre de calle tiene alguna variante de nombre de personajes notables
+         -situación 3: la dirección simple tiene patrón WORD NUM WORD indicando posibles detalles extra pos numeración
+         -situación 4: la dirección simple tiene patrón WORD OF WORD NUM o WORD WORD NUM, indicando nombre compuesto"""
+
+        contested_grammars = {
+            "street_type_present": None,
+            "contested_name": None,
+            "dubious_text": None,
+            "proper_name": None,
         }
         values, tags = zip(*tokens)
         values = [v.lower() for v in values]
         tags = list(tags)
+
         for i in range(len(tags) - 2):
             if tags[i:i + 3] == ['WORD', 'NUM', 'WORD']:
-                contested_grammars['dubious_text']['stat'] = True
-                contested_grammars['dubious_text']['values'].append(values[i + 1])
-        if any(v in contested_names for v in values):
-            contested_grammars['contested_name']['stat'] = True
-            contested_grammars['contested_name']['values'] = [
-                v for v in values if v in contested_names
-            ]
-        if any(t in ('STREET_TYPE_S', 'STREET_TYPE_L') for t in tags):
-            contested_grammars['street_type_present']['stat'] = True
-            contested_grammars['street_type_present']['values'] = [
-                v for v, t in zip(values, tags) if t in ('STREET_TYPE_S', 'STREET_TYPE_L')
-            ]
+                contested_grammars['dubious_text'] = f"{values[i]} {values[i + 1]}"
+
+        contested_grammars['contested_name'] = next(
+            (v for v in values if v in distinguished_names), None
+        )
+
+        contested_grammars['street_type_present'] = next(
+            (v for v, t in zip(values, tags) if t in ('STREET_TYPE_S', 'STREET_TYPE_L')), None
+        )
+
+        for i in range(len(tags) - 2):
+            if tags[i:i + 3] == ['WORD', 'WORD', 'NUM']:
+                contested_grammars['proper_name'] = f"{values[i + 1]} {values[i + 2]}"
+
         return contested_grammars
 
 
