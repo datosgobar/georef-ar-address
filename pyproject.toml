@@ -24,7 +24,8 @@ classifiers = [
 ]
 
 dependencies = [
-  "nltk==3.5"
+  "nltk==3.5",
+  "PyYAML"
 ]
 
 [project.optional-dependencies]

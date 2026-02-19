@@ -584,14 +584,17 @@ class AddressParser:
             if name!= None:
                 contested_vals = distinguished_names.get(name, [])
                 alternative_names.extend(contested_vals)
+            proper_name = self.contested_grammars['proper_name']
+            if proper_name != None:
+                alternative_names.append(proper_name)
         if street_t != None:
             altnames_wout_str = [element.replace(street_type, '').strip() for element in alternative_names]
             altnames_w_str = [element if street_type in element else f"{street_type} {element}" for element in
                               alternative_names]
             all_street_names = altnames_w_str + altnames_wout_str
+            return all_street_names
+        return alternative_names
 
-
-        return all_street_names
 
     def _search_contested_grammars(self, tokens):
         """Esta función devuelve un diccionario identificando 4 posibles situaciones problemáticas:
@@ -607,12 +610,16 @@ class AddressParser:
             "proper_name": None,
         }
         values, tags = zip(*tokens)
-        values = [v.lower() for v in values]
+        values = [v.lower().strip() for v in values]
         tags = list(tags)
 
         for i in range(len(tags) - 2):
             if tags[i:i + 3] == ['WORD', 'NUM', 'WORD']:
-                contested_grammars['dubious_text'] = f"{values[i]} {values[i + 1]}"
+                set_str = values[i + 1]
+
+                contested_grammars['dubious_text'] = " ".join(values).split(set_str)[0]
+
+
 
         contested_grammars['contested_name'] = next(
             (v for v in values if v in distinguished_names), None
@@ -624,7 +631,7 @@ class AddressParser:
 
         for i in range(len(tags) - 2):
             if tags[i:i + 3] == ['WORD', 'WORD', 'NUM']:
-                contested_grammars['proper_name'] = f"{values[i + 1]} {values[i + 2]}"
+                contested_grammars['proper_name'] = f"{values[i + 1]}"
 
         return contested_grammars
 
