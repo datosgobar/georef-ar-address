@@ -15,6 +15,9 @@ import nltk
 from .address_data import AddressData
 import yaml
 
+import logging
+logger = logging.getLogger(__name__)
+
 _GRAMMARS_DIR = os.path.join(os.path.dirname(__file__), 'grammars')
 _GRAMMAR_PATH = os.path.join(_GRAMMARS_DIR, 'address-ar.cfg')
 _CONTESTED_NAMES_PATH = os.path.join(_GRAMMARS_DIR, 'contested_names.yml')
@@ -330,7 +333,7 @@ class TreeVisitor:
             floor = self._select_token_values(
                 tokens, self._components_leaves_indices['floor'])
 
-        return street_names, door_num_value, door_num_unit, floor
+        return logger.debug(_ := (street_names, door_num_value, door_num_unit, floor)) or _
 
     def _get_rank(self):
         """Calcula el rango (puntaje) de 'self._tree'. El rango es utilizado
@@ -466,7 +469,7 @@ class AddressParser:
             if kind != 'WS':
                 tokens.append((value, kind))
 
-        return tokens
+        return logger.debug(tokens) or tokens
 
     def _normalize_address(self, address):
         """Normaliza una dirección, removiendo partes del texto que no son de
@@ -490,7 +493,7 @@ class AddressParser:
         normalized = self._separation_regexp.sub(r'\1 \2', normalized)
 
         # Normalizar espacios (también remueve trailing/leading whitespace)
-        return ' '.join(normalized.split())
+        return logger.debug(_ := ' '.join(normalized.split())) or _
 
     def _disambiguate_trees(self, visitors):
         """Dada una lista de árboles de parseo, toma el mejor utilizando el
@@ -540,7 +543,7 @@ class AddressParser:
             self._parser.parse(token_types)
         ]
 
-        return self._disambiguate_trees(visitors) if visitors else None
+        return logger.debug(_ := self._disambiguate_trees(visitors) if visitors else None) or _
 
     def _parse_token_types(self, token_types):
         """El método '_parse_token_types' es simplemente un wrapper de
@@ -592,8 +595,8 @@ class AddressParser:
             altnames_w_str = [element if street_type in element else f"{street_type} {element}" for element in
                               alternative_names]
             all_street_names = altnames_w_str + altnames_wout_str
-            return all_street_names
-        return alternative_names
+            return logger.debug(_ := all_street_names) or _
+        return logger.debug(_ := alternative_names) or _
 
 
     def _search_contested_grammars(self, tokens):
@@ -633,7 +636,7 @@ class AddressParser:
             if tags[i:i + 3] == ['WORD', 'WORD', 'NUM']:
                 contested_grammars['proper_name'] = f"{values[i + 1]}"
 
-        return contested_grammars
+        return logger.debug(contested_grammars) or contested_grammars
 
 
 
