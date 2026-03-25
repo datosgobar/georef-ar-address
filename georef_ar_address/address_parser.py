@@ -483,6 +483,7 @@ class AddressParser:
 
         """
         # Reemplazar partes no deseadas por espacios
+        address = str(address)
         normalized = self._normalization_regexp.sub(' ', address.strip())
 
         # Separar dos o más letras pegadas a números (en ese orden):
