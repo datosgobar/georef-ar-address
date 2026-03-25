@@ -572,7 +572,7 @@ class AddressParser:
         return self._tokens_parse_tree(token_types)
 
     def _generate_alternative_names(self,street_names):
-        street_type = None
+        street_t = None
         all_street_names = []
         alternative_names = []
         altnames_wout_str = []
@@ -591,8 +591,8 @@ class AddressParser:
             if proper_name != None:
                 alternative_names.append(proper_name)
         if street_t != None:
-            altnames_wout_str = [element.replace(street_type, '').strip() for element in alternative_names]
-            altnames_w_str = [element if street_type in element else f"{street_type} {element}" for element in
+            altnames_wout_str = [element.replace(street_t, '').strip() for element in alternative_names]
+            altnames_w_str = [element if street_t in element else f"{street_t} {element}" for element in
                               alternative_names]
             all_street_names = altnames_w_str + altnames_wout_str
             return logger.debug(_ := all_street_names) or _
