@@ -621,7 +621,7 @@ class AddressParser:
             if tags[i:i + 3] == ['WORD', 'NUM', 'WORD']:
                 set_str = values[i + 1]
 
-                contested_grammars['dubious_text'] = " ".join(values).split(set_str)[0]
+                contested_grammars['dubious_text'] = " ".join(values).split(set_str)[0].strip()
 
 
 
