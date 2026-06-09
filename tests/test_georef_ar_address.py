@@ -9,6 +9,7 @@ logging.basicConfig(format='%(message)s',
 
 ADDRESS_DATA_TEMPLATE = {
     'street_names': [],
+    'alternative_names': [],
     'door_number': {
         'value': None,
         'unit': None

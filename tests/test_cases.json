@@ -417,6 +417,14 @@
         },
         "street_names": [
             "leandro n alem"
+        ],
+        "alternative_names": [
+            "leandro n alem",
+            "leandro nicéforo alem",
+            "dr leandro n alem",
+            "dr alem",
+            "alem",
+            "l n alem"
         ]
     },
     {
@@ -428,6 +436,14 @@
         },
         "street_names": [
             "leandro n alem"
+        ],
+        "alternative_names": [
+            "leandro n alem",
+            "leandro nicéforo alem",
+            "dr leandro n alem",
+            "dr alem",
+            "alem",
+            "l n alem"
         ]
     },
     {
@@ -742,6 +758,24 @@
         },
         "street_names": [
             "avenida belgrano"
+        ],
+        "alternative_names": [
+            "avenida dr manuel belgrano",
+            "avenida manuel belgrano",
+            "avenida gral manuel belgrano",
+            "avenida gral belgrano",
+            "avenida dr belgrano",
+            "avenida dr m belgrano",
+            "avenida gral m belgrano",
+            "avenida m belgrano",
+            "dr manuel belgrano",
+            "manuel belgrano",
+            "gral manuel belgrano",
+            "gral belgrano",
+            "dr belgrano",
+            "dr m belgrano",
+            "gral m belgrano",
+            "m belgrano"
         ]
     },
     {
@@ -753,6 +787,24 @@
         },
         "street_names": [
             "belgrano avenida"
+        ],
+        "alternative_names": [
+            "avenida dr manuel belgrano",
+            "avenida manuel belgrano",
+            "avenida gral manuel belgrano",
+            "avenida gral belgrano",
+            "avenida dr belgrano",
+            "avenida dr m belgrano",
+            "avenida gral m belgrano",
+            "avenida m belgrano",
+            "dr manuel belgrano",
+            "manuel belgrano",
+            "gral manuel belgrano",
+            "gral belgrano",
+            "dr belgrano",
+            "dr m belgrano",
+            "gral m belgrano",
+            "m belgrano"
         ]
     },
     {
@@ -829,9 +881,7 @@
             "value": "100",
             "unit": null
         },
-        "street_names": [
-            "av espora"
-        ]
+        "street_names": ["av espora"]
     },
     {
         "address": "av: espora 100",
@@ -842,7 +892,8 @@
         },
         "street_names": [
             "av: espora"
-        ]
+        ],
+        "alternative_names": ["espora"]
     },
     {
         "address": "av. yak 100",
@@ -864,7 +915,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "san%ta f?e 1000",
@@ -875,7 +927,8 @@
         },
         "street_names": [
             "san%ta f?e"
-        ]
+        ],
+        "alternative_names": ["f?e"]
     },
     {
         "address": "sÃnta fe* 1000",
@@ -887,7 +940,8 @@
         },
         "street_names": [
             "sÃnta fe*"
-        ]
+        ],
+        "alternative_names": ["fe*"]
     },
     {
         "address": "santa fe N| 1000",
@@ -909,7 +963,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe al 1000",
@@ -920,7 +975,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 1000 (N)",
@@ -932,7 +988,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe (E) 1000",
@@ -943,7 +1000,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe \"1000\"",
@@ -954,7 +1012,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe1000",
@@ -966,7 +1025,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 1000,",
@@ -977,7 +1037,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 1000 -",
@@ -988,7 +1049,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe (ex rosario) 1000",
@@ -999,7 +1061,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe(ex rosario) 1000",
@@ -1010,7 +1073,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe (ex rosario), 1000",
@@ -1021,7 +1085,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe s/n",
@@ -1032,7 +1097,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": []
     },
     {
         "address": "santa fe sn",
@@ -1043,7 +1109,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": []
     },
     {
         "address": "santa fe s-n",
@@ -1054,7 +1121,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": []
     },
     {
         "address": "santa fe s/nro",
@@ -1153,7 +1221,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["santa fe", "fe"]
     },
     {
         "address": "calle 1 1000 provincia entre rios",
@@ -1186,7 +1255,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["santa fe", "fe"]
     },
     {
         "address": "santa fe 1000 -villa balnearia",
@@ -1197,7 +1267,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["santa fe", "fe"]
     },
     {
         "address": "santa fe -Nro 1000",
@@ -1408,7 +1479,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 1000, piso 1",
@@ -1420,7 +1492,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 1000 piso 1º",
@@ -1432,7 +1505,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 1000 piso 1°",
@@ -1444,7 +1518,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 211 PB",
@@ -1456,7 +1531,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 211 PB A",
@@ -1468,7 +1544,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 211 2C",
@@ -1480,7 +1557,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 211 piso 2C",
@@ -1492,7 +1570,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 211 11C",
@@ -1504,7 +1583,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "santa fe 211 piso 11C",
@@ -1516,7 +1596,8 @@
         },
         "street_names": [
             "santa fe"
-        ]
+        ],
+        "alternative_names": ["fe"]
     },
     {
         "address": "ruta 8 km 123",
