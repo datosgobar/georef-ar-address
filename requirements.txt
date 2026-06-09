@@ -1,2 +1,1 @@
-nltk==3.8.1
-PyYAML
+nltk==3.9.4
